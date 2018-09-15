@@ -3,17 +3,21 @@
 
 @import "./node_modules/reset-css/sass/reset";
 
+
+// Material Design Components
+@import "@material/elevation/mdc-elevation";
+@import "@material/card/mdc-card";
+@import "@material/button/mdc-button";
+@import "@material/shape/mdc-shape";
+@import "@material/shape/mixins";
+
+
 :root {
   $mdc-theme-primary: #fcb8ab;
   $mdc-theme-secondary: #feeae6;
   $mdc-theme-on-primary: #442b2d;
   $mdc-theme-on-secondary: #442b2d;
 }
-
-// Material Design Components
-@import "@material/elevation/mdc-elevation";
-@import "@material/card/mdc-card";
-
 
 @import "scss/fluid-typography";
 

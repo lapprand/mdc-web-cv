@@ -1,5 +1,6 @@
 // COLOR VARIABLES
-$color-white: #FEFEFA;
+$mdc-bg: #ffeb3b;
+$color-white: #fafafa;
 $color-black: #212121; 
 
 $color-primary: #8bc34a;
@@ -24,7 +25,7 @@ $enable-shadows: true;
 }
 
 html {
-    // overflow-x: hidden;
+    overflow: hidden;
 
     body {
         @include interpolate(font-size, 576px, 1200px, 12px, 18px);
@@ -51,8 +52,8 @@ html {
 }
 .gradient {
     &-main {
-        // background: #50514f;
-        background-image: linear-gradient(to bottom, #50514f, #50514fc4);
+        background: $mdc-bg;
+        // background: linear-gradient(to right bottom, #ffeb3b, #fff);
     }
     &-orange {
         background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
@@ -63,4 +64,9 @@ html {
     &-blue {
         background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
     }
+}
+
+#svgGroup {
+    stroke: $color-black;
+    fill: $color-black;
 }

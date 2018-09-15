@@ -1,114 +1,106 @@
 import anime from 'animejs';
 
-/* ANIMATION DECLARATIONS */
 
-// Animation for page main elements
-const introAnim = anime.timeline({ duration: 1000 });
+// Line animation
+const lineDrawing = anime({
+  targets: '.lines path',
+  strokeDashoffset: [
+    anime.setDashoffset, 0,
+  ],
+  fillOpacity: [
+    0, 1,
+  ],
+  easing: 'easeInOutCubic',
+  duration: 1000,
+  delay(el, i) {
+    return i * 20;
+  },
+  loop: false,
+  autoplay: false,
+  complete: _ => { slideUp.play(); }
+});
 
-// Add animation for each element
-const introAnimTargets = [
+lineDrawing.play();
+
+const slideUp = anime.timeline({ duration: 1000, autoplay: false });
+
+const targets = [
   {
     targets: '.header',
     translateY: [
-      '-100vh', 0,
+      '30vh', 0,
+    ],
+    easing: 'easeOutExpo'
+  },
+  {
+    targets: '.carousel-content',
+    translateY: [
+      '30vh', 0,
     ],
     easing: 'easeOutExpo',
-    offset: '-=950',
-    completed: _ => {
-      const targets = [
-        {
-          targets: '.carousel-content',
-          translateY: [
-            '-100vh', 0,
-          ],
-          easing: 'easeOutExpo',
-        }, {
-          targets: '.carousel-prev',
-          translateY: [
-            '-100vh', 0,
-          ],
-          easing: 'easeOutExpo',
-          offset: '-=950',
-        }, {
-          targets: '.carousel-next',
-          translateY: [
-            '-100vh', 0,
-          ],
-          easing: 'easeOutExpo',
-          offset: '-=900',
-        }
-      ];
-      targets.map(function (target) {
-        introAnim.add(target);
-      });
-    }
+    offset: 300,
+    opacity: [0, 1]
   },
+  {
+    targets: '.carousel-prev',
+    translateY: [
+      '30vh', 0,
+    ],
+    easing: 'easeOutExpo',
+    offset: 500,
+    opacity: [0, 1]
+  },
+  {
+    targets: '.carousel-next',
+    translateY: [
+      '30vh', 0,
+    ],
+    easing: 'easeOutExpo',
+    offset: 600,
+    opacity: [0, 1]
+  }
 ];
 
-introAnim.add(introAnimTargets);
-introAnim.finished.then(animeFinished);
-
+targets.map(function (target) {
+  slideUp.add(target);
+});
 
 // Chevron hover animation
-const chevronLeftEl = document.querySelector('.chevron-anim-prev');
-const chevronRightEl = document.querySelector('.chevron-anim-next');
+// const chevronLeftEl = document.querySelector('.chevron-anim-prev');
+// const chevronRightEl = document.querySelector('.chevron-anim-next');
 
-function animateEnterChevron(target) {
-  anime.remove(target);
-  anime({
-    targets: target,
-    scale: 1.2,
-    duration: 200,
-    loop: false,
-    easing: 'linear',
-    backgroundColor: ['#2998ff', '#5643fa'],
-    filter: ['drop-shadow(30px 10px 4px #4444dd)'],
-  });
-}
+// function animateEnterChevron(target) {
+//   anime.remove(target);
+//   anime({
+//     targets: target,
+//     scale: 1.1,
+//     translateY: -8,
+//     duration: 200,
+//     loop: false,
+//     easing: 'linear',
+//     backgroundColor: ['#484848'],
+//     filter: ['drop-shadow(30px 10px 4px #4444dd)'],
+//   });
+// }
 
-function animateLeaveChevron(target) {
-  anime.remove(target);
-  anime({
-    targets: target,
-    scale: 1,
-    duration: 400,
-    loop: false,
-    easing: 'linear',
-    backgroundColor: ['#FEFEFA'],
-    filter: ['drop-shadow(30px 10px 4px #4444dd)'],
-  });
-}
+// function animateLeaveChevron(target) {
+//   anime.remove(target);
+//   anime({
+//     targets: target,
+//     scale: 1,
+//     translateY: 0,
+//     duration: 400,
+//     loop: false,
+//     easing: 'linear',
+//     backgroundColor: ['#212121'],
+//     filter: ['drop-shadow(30px 10px 4px #4444dd)'],
+//   });
+// }
 
-chevronLeftEl.addEventListener('mouseenter', () => {
-  animateEnterChevron(chevronLeftEl);
-}, false);
+// chevronLeftEl.addEventListener('mouseenter', () => {
+//   animateEnterChevron(chevronLeftEl);
+// }, false);
 
-chevronLeftEl.addEventListener('mouseleave', () => {
-  animateLeaveChevron(chevronLeftEl);
-}, false);
-
-function animeFinished() {
-  // var svgLines = document.getElementsByClassName('lines');
-  // svgLines[0].removeAttribute('hidden');
-
-  // Line animation
-  const lineDrawing = anime({
-    targets: '.lines path',
-    strokeDashoffset: [
-      anime.setDashoffset, 0,
-    ],
-    fillOpacity: [
-      0, 1,
-    ],
-    easing: 'easeInOutCubic',
-    duration: 3000,
-    delay(el, i) {
-      return i * 0;
-    },
-    // direction: 'alternate',
-    loop: false,
-    autoplay: false,
-  });
-
-  lineDrawing.play();
-}
+// chevronLeftEl.addEventListener('mouseleave', () => {
+//   animateLeaveChevron(chevronLeftEl);
+// }, false);
