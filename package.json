@@ -1,0 +1,39 @@
+{
+  "name": "mdc-web-cv",
+  "version": "1.0.0",
+  "description": "CV I made with material components web",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --progress --mode development --hot --inline"
+  },
+  "author": "Arthur Lapprand <lapprand@gmail.com>",
+  "repository": {
+    "url": "https://github.com/lapprand/mdc-web-cv.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "autoprefixer": "^9.1.5",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.2",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^1.0.0",
+    "extract-loader": "^3.0.0",
+    "file-loader": "^2.0.0",
+    "node-sass": "^4.9.3",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.18.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "dependencies": {
+    "@material/card": "^0.39.3",
+    "@material/elevation": "^0.39.1",
+    "@material/shape": "^0.39.0",
+    "@material/theme": "^0.39.1",
+    "animejs": "^2.2.0",
+    "jquery": "^3.3.1",
+    "reset-css": "^4.0.1"
+  }
+}

@@ -1,0 +1,37 @@
+// $color-white: #fff;
+// $color-black: #000;
+
+// .flip {
+//     // FUNCTIONALITY
+//     perspective: 100vw;
+//     perspective-origin: center;
+//     -moz-perspective: 100vw;
+//     -moz-perspective-origin: center;
+//     position: relative;
+
+//     &__side {
+//         transition: all 0.8s ease;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         -webkit-backface-visibility: hidden;
+//         backface-visibility: hidden;
+//         border-radius: 10px;
+//         overflow: hidden;
+//         // box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+//         &--front {
+//             background-color: $color-white;
+//         }
+
+//         &--back {
+//             transform: rotateY(180deg);
+//         }
+//     }
+//     // &:hover &__side--front {
+//     //   transform: rotateY(-180deg);
+//     // }
+//     // &:hover &__side--back {
+//     //   transform: rotateY(0);
+//     // }
+// }

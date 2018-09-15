@@ -1,0 +1,40 @@
+.carousel-content,
+.carousel-next,
+.carousel-prev,
+.header {
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    grid-area: hd;
+
+    .lines {
+        @include interpolate(width, 100px, 1200px, 200px, 600px);
+    }
+}
+
+.carousel-content {
+    grid-area: cc;
+}
+
+.carousel-prev {
+    grid-area: cp;
+}
+
+.carousel-next {
+    grid-area: cn;
+}
+
+.grid-wrap {
+    display: grid;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas: ". . . . . . . . ." ". hd hd hd hd hd hd hd ." ". . . cc cc cc . . ." ". . . cc cc cc . . ." ". cp . cc cc cc . cn ." ". . . cc cc cc . . ." ". . . cc cc cc . . ." ". . . . . . . . .";
+
+    // @media only screen and (max-width: 600px) {
+    //     grid-template-areas: ". . . . . . . . ." ". hd hd hd hd hd hd hd ." ". . . cc cc cc . . ." ". . . cc cc cc . . ." ". cp . cc cc cc . cn ." ". . . cc cc cc . . ." ". . . cc cc cc . . ." ". . . . . . . . .";
+    // }
+}
