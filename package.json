@@ -4,7 +4,7 @@
   "description": "CV I made with material components web",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --progress --mode production",
+    "build": "webpack --mode production",
     "start": "webpack-dev-server --progress --mode development --hot --inline"
   },
   "author": "Arthur Lapprand <lapprand@gmail.com>",
