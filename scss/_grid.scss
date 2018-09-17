@@ -1,4 +1,4 @@
-.carousel-content,
+// .carousel-content,
 .carousel-next,
 .carousel-prev,
 .header {
@@ -31,8 +31,8 @@
 .grid-wrap {
     display: grid;
     grid-auto-rows: minmax(100px, auto);
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-areas: ". . . . . . . . ." ". hd hd hd hd hd hd hd ." ". . . cc cc cc . . ." ". . . cc cc cc . . ." ". cp . cc cc cc . cn ." ". . . cc cc cc . . ." ". . . cc cc cc . . ." ". . . . . . . . .";
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-areas: ". . . . . . . . . ." ". hd hd hd hd hd hd hd hd ." ". . . cc cc cc cc . . ." ". . . cc cc cc cc . . ." ". cp . cc cc cc cc . cn ." ". . . cc cc cc cc . . ." ". . . cc cc cc cc . . ." ". . . . . . . . . .";
 
     // @media only screen and (max-width: 600px) {
     //     grid-template-areas: ". . . . . . . . ." ". hd hd hd hd hd hd hd ." ". . . cc cc cc . . ." ". . . cc cc cc . . ." ". cp . cc cc cc . cn ." ". . . cc cc cc . . ." ". . . cc cc cc . . ." ". . . . . . . . .";
