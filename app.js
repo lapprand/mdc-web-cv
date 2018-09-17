@@ -3,8 +3,8 @@
 // const ripple = new MDCRipple(document.querySelector('.foo-button'));
 
 
-$(".header").load("lapp-svg.html");
-$(".carousel-content").load("carousel.html");
+// $(".header").load("_lapp-svg.html");
+$(".carousel-content").load("_carousel.html");
 
 window.onload = _ => {
   require ('./js/animations');
