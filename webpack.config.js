@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // Enable interpolation syntax for ES6 template strings
-require("html-loader?interpolate!./file.html");
+// require("html-loader?interpolate!./file.html");
 
 module.exports = [{
   entry: ['./app.scss', './app.js'],
@@ -20,8 +20,8 @@ module.exports = [{
         use: {
           loader: 'html-loader',
           options: {
-            minimize: true,
-            attrs: [':data-src']
+            interpolate: true,
+            minimize: true
           }
         }
       },

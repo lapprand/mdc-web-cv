@@ -12,7 +12,7 @@
 <body>
     <div class="fit-viewport grid-wrap gradient-main">
 
-        <div class="header"><%= include _lapp-svg.html %></div>
+        <div class="header">${require('./_lapp-svg.html')}</div>
 
         <aside class="carousel-prev">
             <div class="mdc-shape-container my-shape-container">
@@ -22,7 +22,7 @@
             </div>
         </aside>
 
-        <div class="carousel-content"></div>
+        <div class="carousel-content">${require('./_carousel.html')}</div>
 
         <aside class="carousel-next">
             <div class="mdc-shape-container my-shape-container">
