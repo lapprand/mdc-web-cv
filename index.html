@@ -7,6 +7,7 @@
     <meta name="msapplication-tap-highlight" content="no" />
     <title>Lapprand CV</title>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="bundle.css">
 </head>
 
@@ -16,21 +17,17 @@
         <div class="header">${require('./_lapp-svg.html')}</div>
 
         <aside class="carousel-prev">
-            <div class="mdc-shape-container my-shape-container">
-                <button id="hover" class="mdc-button mdc-button--unelevated mdc-elevation-transition"></button>
-                <div id="hover" class="mdc-shape-container__corner mdc-shape-container__corner--top-left"></div>
-                <div id="hover" class="mdc-shape-container__corner mdc-shape-container__corner--bottom-left"></div>
-            </div>
+            <button class="mdc-button mdc-button--outlined mdc-elevation-transition">
+                <i class="material-icons mdc-button__icon" aria-hidden="true">arrow_left</i>
+            </button>
         </aside>
 
         <div class="carousel-content">${require('./_carousel.html')}</div>
 
         <aside class="carousel-next">
-            <div class="mdc-shape-container my-shape-container">
-                <button id="hover" class="mdc-button mdc-button--unelevated mdc-elevation-transition"></button>
-                <div class="mdc-shape-container__corner mdc-shape-container__corner--top-right"></div>
-                <div class="mdc-shape-container__corner mdc-shape-container__corner--bottom-right"></div>
-            </div>
+            <button class="mdc-button mdc-button--outlined mdc-elevation-transition">
+                <i class="material-icons mdc-button__icon" aria-hidden="true">arrow_right</i>
+            </button>
         </aside>
     </div>
 </body>

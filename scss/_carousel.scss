@@ -23,7 +23,11 @@
     &-prev {
 
         .my-shape-container {
+            mdc-button {
+                @include mdc-button-filled-accessible($mdc-bg);
+            }
             @include mdc-shape-angled-corner($mdc-bg, 20px);
+            @include mdc-shape-angled-corner-outline(2px, $color-black);
         }
         //filter: drop-shadow(0 19px 38px rgba(0,0,0,0.30)) drop-shadow(0 15px 12px rgba(0,0,0,0.22));
 
