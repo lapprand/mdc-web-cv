@@ -61,9 +61,7 @@ const targets = [
   }
 ];
 
-targets.map(function (target) {
-  slideUp.add(target);
-});
+targets.map(target => slideUp.add(target));
 
 // Chevron hover animation
 // const chevronLeftEl = document.querySelector('.chevron-anim-prev');
