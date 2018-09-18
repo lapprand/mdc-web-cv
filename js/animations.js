@@ -10,10 +10,10 @@ const lineDrawing = anime({
   fillOpacity: [
     0, 1,
   ],
-  easing: 'easeInOutCubic',
-  duration: 1000,
+  easing: 'easeInOutSine',
+  duration: 500,
   delay(el, i) {
-    return i * 20;
+    return i * 50;
   },
   loop: false,
   autoplay: false,
@@ -22,7 +22,7 @@ const lineDrawing = anime({
 
 lineDrawing.play();
 
-const slideUp = anime.timeline({ duration: 1000, autoplay: false });
+const slideUp = anime.timeline({ autoplay: false });
 
 const targets = [
   {
@@ -30,14 +30,16 @@ const targets = [
     translateY: [
       '30vh', 0,
     ],
-    easing: 'easeOutExpo'
+    duration: 300,
+    easing: [0.4, 0.0, 0.2, 1]
   },
   {
     targets: '.carousel-content',
     translateY: [
       '30vh', 0,
     ],
-    easing: 'easeOutExpo',
+    easing: [0.0, 0.0, 0.2, 1],
+    duration: 250,
     offset: 300,
     opacity: [0, 1]
   },
@@ -46,8 +48,9 @@ const targets = [
     translateY: [
       '30vh', 0,
     ],
-    easing: 'easeOutExpo',
-    offset: 500,
+    easing: [0.0, 0.0, 0.2, 1],
+    duration: 200,
+    // offset: 300,
     opacity: [0, 1]
   },
   {
@@ -55,8 +58,9 @@ const targets = [
     translateY: [
       '30vh', 0,
     ],
-    easing: 'easeOutExpo',
-    offset: 600,
+    easing: [0.0, 0.0, 0.2, 1],
+    duration: 200,
+    // offset: 300,
     opacity: [0, 1]
   }
 ];

@@ -12,7 +12,7 @@
     grid-area: hd;
 
     .lines {
-        @include interpolate(width, 100px, 1200px, 200px, 600px);
+        @include interpolate(width, 100px, 1200px, 200px, 500px);
     }
 }
 
