@@ -12,8 +12,14 @@
                 width: calc(100% - 32px);
                 height: calc(100% - 32px);
 
+                // Display cards vertically and horizontally centered
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
                 .mdc-card {
                     padding: 16px;
+                    align-self: center;
                 }
             }
         }
@@ -29,28 +35,5 @@
             @include mdc-shape-angled-corner($mdc-bg, 20px);
             @include mdc-shape-angled-corner-outline(2px, $color-black);
         }
-        //filter: drop-shadow(0 19px 38px rgba(0,0,0,0.30)) drop-shadow(0 15px 12px rgba(0,0,0,0.22));
-
-        // div {
-        //     max-width: 4rem;
-        //     max-height: 4rem;
-        //     height: 100%;
-        //     width: 100%;
-        //     background-color: $color-black;
-        // }
-        
-        // .chevron-anim {
-        //     // height: 6%;
-        //     // width: 12%;
-        //     &-prev {
-        //         -webkit-clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-        //         clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-        //     }
-
-        //     &-next {
-        //         -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-        //         clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-        //     }
-        // }
     }
 }
