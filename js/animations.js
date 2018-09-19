@@ -39,7 +39,7 @@ const targets = [
       '30vh', 0,
     ],
     easing: [0.0, 0.0, 0.2, 1],
-    duration: 250,
+    duration: 275,
     offset: 300,
     opacity: [0, 1]
   },
@@ -49,8 +49,8 @@ const targets = [
       '30vh', 0,
     ],
     easing: [0.0, 0.0, 0.2, 1],
-    duration: 200,
-    // offset: 300,
+    duration: 300,
+    offset: 325,
     opacity: [0, 1]
   },
   {
@@ -59,50 +59,10 @@ const targets = [
       '30vh', 0,
     ],
     easing: [0.0, 0.0, 0.2, 1],
-    duration: 200,
-    // offset: 300,
+    duration: 300,
+    offset: 350,
     opacity: [0, 1]
   }
 ];
 
 targets.map(target => slideUp.add(target));
-
-// Chevron hover animation
-// const chevronLeftEl = document.querySelector('.chevron-anim-prev');
-// const chevronRightEl = document.querySelector('.chevron-anim-next');
-
-// function animateEnterChevron(target) {
-//   anime.remove(target);
-//   anime({
-//     targets: target,
-//     scale: 1.1,
-//     translateY: -8,
-//     duration: 200,
-//     loop: false,
-//     easing: 'linear',
-//     backgroundColor: ['#484848'],
-//     filter: ['drop-shadow(30px 10px 4px #4444dd)'],
-//   });
-// }
-
-// function animateLeaveChevron(target) {
-//   anime.remove(target);
-//   anime({
-//     targets: target,
-//     scale: 1,
-//     translateY: 0,
-//     duration: 400,
-//     loop: false,
-//     easing: 'linear',
-//     backgroundColor: ['#212121'],
-//     filter: ['drop-shadow(30px 10px 4px #4444dd)'],
-//   });
-// }
-
-// chevronLeftEl.addEventListener('mouseenter', () => {
-//   animateEnterChevron(chevronLeftEl);
-// }, false);
-
-// chevronLeftEl.addEventListener('mouseleave', () => {
-//   animateLeaveChevron(chevronLeftEl);
-// }, false);

@@ -12,7 +12,7 @@
     grid-area: h;
 
     .lines {
-        @include interpolate(width, 100px, 1200px, 200px, 500px);
+        @include interpolate(width, 200px, 1200px, 200px, 500px);
     }
 }
 
@@ -30,7 +30,7 @@
 
 .grid-wrap {
     display: grid;
-    grid-auto-rows: minmax(50px, auto);
+    grid-auto-rows: minmax(10px, auto);
     grid-template-columns: repeat(10, 1fr);
     grid-template-areas: 
         ". . . . . . . . . ." 

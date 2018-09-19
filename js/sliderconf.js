@@ -1,14 +1,6 @@
 import { getSlider } from 'simple-slider';
 import Hammer from 'hammerjs';
 
-// var slides = document.querySelectorAll('#slider .slide');
-// let i = 0;
-// slides.forEach(slide => {
-//   console.log(slide.style.zIndex);
-//   slide.style.zIndex = i++;
-//   console.log(slide.style.zIndex);
-// });
-
 var sliderContainer = document.getElementById('slider');
 
 var slider = getSlider({
@@ -46,4 +38,16 @@ mc.on('swiperight', function () {
     isNext = true;
   }
   slider.next();
+});
+
+
+// Add ripple effect to icon buttons
+
+import { MDCRipple } from '@material/ripple';
+
+var iconBtns = document.querySelectorAll('.mdc-icon-button');
+
+iconBtns.forEach(btn => {
+  var iconButtonRipple = new MDCRipple(btn);
+  iconButtonRipple.unbounded = true;
 });
