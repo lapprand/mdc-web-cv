@@ -25,7 +25,7 @@ $enable-shadows: true;
 }
 
 html {
-    overflow: hidden;
+    // overflow: hidden;
 
     body {
         @include interpolate(font-size, 576px, 1200px, 12px, 18px);
@@ -52,7 +52,7 @@ html {
 }
 .gradient {
     &-main {
-        background: $mdc-bg;
+        // background: $mdc-bg;
         // background: linear-gradient(to right bottom, #ffeb3b, #fff);
     }
     &-orange {
