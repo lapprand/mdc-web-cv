@@ -3,8 +3,8 @@
 
 @import "../node_modules/reset-css/sass/reset";
 
-$mdc-theme-primary: #fcb8ab;
-$mdc-theme-secondary: #feeae6;
+$mdc-theme-primary: #212121;
+$mdc-theme-secondary: #ffeb3b;
 $mdc-theme-on-primary: #442b2d;
 $mdc-theme-on-secondary: #442b2d;
 
@@ -15,6 +15,7 @@ $mdc-theme-on-secondary: #442b2d;
 @import "@material/icon-button/mdc-icon-button";
 @import "@material/shape/mdc-shape";
 @import "@material/shape/mixins";
+@import "@material/linear-progress/mdc-linear-progress";
 
 @import "src/scss/fluid-typography";
 
