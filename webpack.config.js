@@ -4,14 +4,15 @@ const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-// Enable interpolation syntax for ES6 template strings
-// require("html-loader?interpolate!./file.html");
-
-module.exports = [{
-  entry: ['./app.scss', './app.js'],
+module.exports = {
+  mode: 'development',
+  entry: [
+    path.join(__dirname, 'app', 'index.js'),
+    path.join(__dirname, 'app', 'index.scss')
+  ],
   output: {
-    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
@@ -45,12 +46,26 @@ module.exports = [{
           {
             loader: 'sass-loader',
             options: {
-              includePaths: ['./node_modules']
+              includePaths: [path.resolve(__dirname, 'node_modules')]
             }
           }
         ]
       },
-      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }]
+      {
+        test: /\.js$/,
+        include: [
+          path.resolve(__dirname, 'app')
+        ],
+        exclude: [
+          path.resolve(__dirname, 'node_modules'),
+          path.resolve(__dirname, 'bower_components')
+        ],
+        loader: 'babel-loader',
+        query: {
+          presets: ['@babel/preset-env']
+        }
+      }
+    ]
   },
   plugins: [
     new webpack.ProvidePlugin({
@@ -58,8 +73,12 @@ module.exports = [{
       jQuery: 'jquery'
     }),
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      template: path.join(__dirname, 'app', 'index.html')
     }),
-    new CleanWebpackPlugin(['dist'])
-  ]
-}];
+    new CleanWebpackPlugin([path.resolve(__dirname, 'dist')])
+  ],
+  devtool: 'source-map',
+  // devServer: {
+  //   publicPath: path.join('/dist/')
+  // }
+};

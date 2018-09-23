@@ -1,0 +1,26 @@
+// Import fonts
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Mirza:400,700");
+
+@import "../node_modules/reset-css/sass/reset";
+
+$mdc-theme-primary: #fcb8ab;
+$mdc-theme-secondary: #feeae6;
+$mdc-theme-on-primary: #442b2d;
+$mdc-theme-on-secondary: #442b2d;
+
+// Material Design Components
+@import "@material/elevation/mdc-elevation";
+@import "@material/card/mdc-card";
+@import "@material/button/mdc-button";
+@import "@material/icon-button/mdc-icon-button";
+@import "@material/shape/mdc-shape";
+@import "@material/shape/mixins";
+
+@import "src/scss/fluid-typography";
+
+@import "src/scss/base";
+
+@import "src/scss/grid";
+
+@import "src/scss/carousel";
+
