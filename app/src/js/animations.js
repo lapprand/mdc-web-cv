@@ -30,7 +30,7 @@ const targets = [
     translateY: [
       '30vh', 0,
     ],
-    duration: 300,
+    duration: 500,
     easing: [0.4, 0.0, 0.2, 1]
   },
   {
@@ -39,7 +39,7 @@ const targets = [
       '30vh', 0,
     ],
     easing: [0.0, 0.0, 0.2, 1],
-    duration: 275,
+    duration: 500,
     offset: 300,
     opacity: [0, 1]
   },
@@ -49,8 +49,8 @@ const targets = [
       '30vh', 0,
     ],
     easing: [0.0, 0.0, 0.2, 1],
-    duration: 300,
-    offset: 325,
+    duration: 500,
+    offset: 400,
     opacity: [0, 1]
   },
   {
@@ -59,8 +59,8 @@ const targets = [
       '30vh', 0,
     ],
     easing: [0.0, 0.0, 0.2, 1],
-    duration: 300,
-    offset: 350,
+    duration: 500,
+    offset: 500,
     opacity: [0, 1]
   }
 ];

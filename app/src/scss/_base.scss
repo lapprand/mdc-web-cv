@@ -19,11 +19,6 @@ $font-display: "Mirza", monospace;
 
 $enable-shadows: true;
 
-* {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 .loader {
     position: absolute;
     z-index: 1;

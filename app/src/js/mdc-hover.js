@@ -1,4 +1,4 @@
-var hoverEls = document.querySelectorAll('#hover');
+var hoverEls = document.querySelectorAll('.hover');
 
 hoverEls.forEach(function(hoverEl) {
   hoverEl.addEventListener('mouseenter', function () {
