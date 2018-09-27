@@ -18,13 +18,39 @@ module.exports = {
     rules: [
       {
         test: /\.(html)$/,
-        use: {
-          loader: 'html-loader',
-          options: {
-            interpolate: true,
-            minimize: true
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              interpolate: true,
+              minimize: true
+            }
+          },
+          {
+            loader: 'markup-inline-loader',
+            options: {
+              svgo: {
+                plugins: [
+                  {
+                    mergePaths: false
+                  },
+                  {
+                    cleanupIDs: false
+                  },
+                  {
+                    removeTitle: true
+                  },
+                  {
+                    removeUselessStrokeAndFill: false
+                  },
+                  {
+                    removeUnknownsAndDefaults: false
+                  },
+                ],
+              },
+            }
           }
-        }
+        ]
       },
       {
         test: /\.scss$/,
