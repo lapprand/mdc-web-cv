@@ -11,10 +11,7 @@ $mdc-theme-on-secondary: #000000;
 // Material Design Components
 @import "@material/elevation/mdc-elevation";
 @import "@material/card/mdc-card";
-@import "@material/button/mdc-button";
 @import "@material/icon-button/mdc-icon-button";
-@import "@material/shape/mdc-shape";
-@import "@material/shape/mixins";
 @import "@material/linear-progress/mdc-linear-progress";
 
 @import "src/scss/fluid-typography";
