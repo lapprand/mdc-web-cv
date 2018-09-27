@@ -24,21 +24,25 @@ mc.add(Swipe);
 
 var isNext = true;
 
-mc.on('swipeleft', function () {
+function nextSlide() {
   if (isNext) {
     slider.reverse();
     isNext = false;
   }
   slider.next();
-});
+};
 
-mc.on('swiperight', function () {
+function prevSlide() {
   if (!isNext) {
     slider.reverse();
     isNext = true;
   }
   slider.next();
-});
+};
+
+mc.on('swipeleft', nextSlide);
+
+mc.on('swiperight', prevSlide);
 
 
 // Add ripple effect to icon buttons
@@ -50,4 +54,7 @@ var iconBtns = document.querySelectorAll('.mdc-icon-button');
 iconBtns.forEach(btn => {
   var iconButtonRipple = new MDCRipple(btn);
   iconButtonRipple.unbounded = true;
+
+  if (btn.id === 'prev') { btn.addEventListener('click', prevSlide, false); }
+  else if (btn.id === 'next') { btn.addEventListener('click', nextSlide, false); }
 });
