@@ -8,7 +8,7 @@ const lineDrawing = anime({
     anime.setDashoffset, 0,
   ],
   fillOpacity: [
-    0, 1,
+    0, 0.95,
   ],
   easing: 'easeInOutSine',
   duration: 500,
