@@ -34,7 +34,7 @@ const targets = [
     easing: [0.4, 0.0, 0.2, 1]
   },
   {
-    targets: '.carousel-content',
+    targets: '.slider-content',
     translateY: [
       '30vh', 0,
     ],
@@ -44,7 +44,7 @@ const targets = [
     opacity: [0, 1]
   },
   {
-    targets: '.carousel-prev',
+    targets: '.slider-prev',
     translateY: [
       '30vh', 0,
     ],
@@ -54,7 +54,7 @@ const targets = [
     opacity: [0, 1]
   },
   {
-    targets: '.carousel-next',
+    targets: '.slider-next',
     translateY: [
       '30vh', 0,
     ],
