@@ -17,7 +17,7 @@ for (let i = 0; i < slides.length; i++) {
 
 
 // Enable swipe with hammerjs
-var mc = new Hammer.Manager(sliderContainer);
+var mc = new Hammer.Manager(document.querySelector('.grid-wrap'));
 var Swipe = new Hammer.Swipe();
 
 mc.add(Swipe);
