@@ -9,6 +9,7 @@ $mdc-theme-on-primary: #ffffff;
 $mdc-theme-on-secondary: #000000;
 
 // Material Design Components
+@import "@material/theme/mixins";
 @import "@material/elevation/mdc-elevation";
 @import "@material/card/mdc-card";
 @import "@material/icon-button/mdc-icon-button";

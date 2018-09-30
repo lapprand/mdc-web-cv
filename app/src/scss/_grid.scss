@@ -9,7 +9,7 @@
     grid-area: h;
 
     .lines {
-        @include interpolate(width, 200px, 1600px, 200px, 450px);
+        @include interpolate(width, 200px, 1600px, 200px, 500px);
         min-height: 50px;
     }
 }
