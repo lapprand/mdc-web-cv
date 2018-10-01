@@ -1,14 +1,15 @@
 import anime from 'animejs';
 
-
 // Line animation
 const lineDrawing = anime({
   targets: '.lines path',
   strokeDashoffset: [
     anime.setDashoffset, 0,
   ],
+  stroke: ['#ffeb3b', '#212121'],
+  fill: ['#ffeb3b', '#ffeb3b', '#424242'],
   fillOpacity: [
-    0, 0
+    0, 1
   ],
   easing: 'easeOutSine',
   duration: 500,
@@ -66,3 +67,15 @@ const targets = [
 ];
 
 targets.map(target => slideUp.add(target));
+
+// slideUp.finished.then(() => {
+//   // Add hover shadow to paths of SVG text
+//   var svgPaths = document.querySelectorAll('.lines path');
+
+//   svgPaths.forEach(path => {
+//     console.log(path);
+//     path.addEventListener('mouseover', () => {
+//       path.style.filter = 'drop-shadow(2px 2px 7px rgba(0,0,0,1))';
+//     });
+//   });
+// });
