@@ -1,25 +1,31 @@
 // Import fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Mirza:400,700");
 
+// Reset browser styles
 @import "../node_modules/reset-css/sass/reset";
 
-$mdc-theme-primary: #212121;
-$mdc-theme-secondary: #ffeb3b;
-$mdc-theme-on-primary: #ffffff;
-$mdc-theme-on-secondary: #000000;
+// $mdc-theme-primary: #212121;
+// $mdc-theme-secondary: #ffeb3b;
+// $mdc-theme-on-primary: #ffffff;
+// $mdc-theme-on-secondary: #000000;
+
+$mdc-theme-primary: #95dff3;
+$mdc-theme-on-primary: #442C2E;
+$mdc-theme-secondary: #efe6fe;
+$mdc-theme-on-secondary: #442C2E;
+$mdc-theme-surface: #e3f2fd;
+$mdc-theme-on-surface: #442C2E;
+$mdc-theme-background: #FFFFFF;
+$mdc-theme-on-background: #442C2E;
 
 // Material Design Components
-@import "@material/theme/mixins";
-@import "@material/elevation/mdc-elevation";
-@import "@material/card/mdc-card";
-@import "@material/icon-button/mdc-icon-button";
 @import "@material/linear-progress/mdc-linear-progress";
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/elevation/mdc-elevation";
+@import "@material/typography/mdc-typography";
+@import "@material/card/mdc-card";
 
 @import "src/scss/fluid-typography";
-
 @import "src/scss/base";
-
 @import "src/scss/grid";
-
-@import "src/scss/slider";
 

@@ -1,17 +1,13 @@
-// COLOR VARIABLES
-$mdc-bg: #ffeb3b;
-$color-white: #fafafa;
-$color-black: #212121; 
+// GRADIENT COLORS 
+$green: #8bc34a;
+$green-light: #bef67a;
+$green-dark: #5a9216;
 
-$color-primary: #8bc34a;
-$color-primary-light: #bef67a;
-$color-primary-dark: #5a9216;
+$orange-light: #ffb900;
+$orange-dark: #ff7730;
 
-$color-secondary-light: #ffb900;
-$color-secondary-dark: #ff7730;
-
-$color-tertiary-light: #2998ff;
-$color-tertiary-dark: #5643fa;
+$blue-light: #2998ff;
+$blue-dark: #5643fa;
 
 // FONT VARIABLES
 $font-primary: "Open Sans", sans-serif;
@@ -27,24 +23,34 @@ $enable-shadows: true;
 }
 
 html {
-    overflow: hidden;
+    // overflow: hidden;
 
     body {
-        @include interpolate(font-size, 576px, 1200px, 12px, 18px);
+        // @include interpolate(font-size, 576px, 1200px, 12px, 18px);
 
         font-display: swap;
         font-family: $font-primary;
 
+        .card {
+            &-title {
+                @include mdc-typography(headline5);
+            }
+
+            &-text {
+                @include mdc-typography(body1);
+            }
+        }
+        
         h1 {
-            @include interpolate(font-size, 320px, 1100px, 32px, 60px);
+            // @include interpolate(font-size, 320px, 1100px, 32px, 60px);
 
             font-family: $font-display;
             // text-shadow: 0px 0px 4px rgba(229, 255, 0, 0.651);
         }
 
-        h4 {
-            @include interpolate(font-size, 320px, 1100px, 16px, 24px);
-        }
+        // h4 {
+        //     @include interpolate(font-size, 320px, 1100px, 16px, 24px);
+        // }
 
         .fit-viewport {
             display: none;
@@ -54,22 +60,13 @@ html {
     }
 }
 .gradient {
-    &-main {
-        // background: $mdc-bg;
-        // background: linear-gradient(to right bottom, #ffeb3b, #fff);
-    }
     &-orange {
-        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+        background-image: linear-gradient(to right bottom, $orange-light, $orange-dark);
     }
     &-green {
-        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+        background-image: linear-gradient(to right bottom, $green-light, $green-dark);
     }
     &-blue {
-        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+        background-image: linear-gradient(to right bottom, $blue-light, $blue-dark);
     }
-}
-
-#svgGroup {
-    // stroke: $color-black;
-    // fill: $color-black;
 }
