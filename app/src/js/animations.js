@@ -1,20 +1,20 @@
 import anime from 'animejs';
 
 // Line animation
-const lineDrawing = anime({
+anime({
   targets: '.lines path',
   strokeDashoffset: [
     anime.setDashoffset, 0,
   ],
-  stroke: ['#ffeb3b', '#212121'],
-  fill: ['#ffeb3b', '#ffeb3b', '#424242'],
+  stroke: ['#67daff', '#67daff', '#002f6c'],
+  fill: ['#67daff', '#67daff', '#01579b'],
   fillOpacity: [
     0, 1
   ],
   easing: 'easeOutSine',
-  duration: 500,
+  duration: 750,
   delay(el, i) {
-    return i * 25;
+    return i * 50;
   },
   loop: false,
   autoplay: true,

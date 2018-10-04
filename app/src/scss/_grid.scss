@@ -6,46 +6,9 @@
 }
 
 .header {
-    // grid-area: h;
-
     .lines {
         @include interpolate(width, 200px, 1600px, 200px, 500px);
-        min-height: 2rem;
-        height: 10vh;
+        min-height: 4rem;
+        // height: 10vh;
     }
 }
-
-// .content {
-//     grid-area: c;
-// }
-
-// .grid-wrap {
-//     display: grid;
-//     grid-auto-rows: minmax(50px, auto);
-//     // grid-auto-columns: minmax(50px, auto);
-//     grid-template-columns: repeat(10, 1fr);
-
-//     grid-template-areas: 
-//         ". . . . . . . . . ." 
-//         ". . h h h h h h . ." 
-//         ". c c c c c c c c ." 
-//         ". c c c c c c c c ." 
-//         ". c c c c c c c c ." 
-//         ". c c c c c c c c ." 
-//         ". c c c c c c c c ." 
-//         ". . . . . . . . . .";
-
-//     // @media only screen and (max-width: 600px) {
-//     //     // grid-template-columns: repeat(12, 1fr);
-
-//     //     grid-template-areas: 
-//     //         ". . . . . . . . . . . ." 
-//     //         ". h h h h h h h h h h ." 
-//     //         ". c c c c c c c c c c ." 
-//     //         ". c c c c c c c c c c ." 
-//     //         ". c c c c c c c c c c ." 
-//     //         ". c c c c c c c c c c ." 
-//     //         ". c c c c c c c c c c ." 
-//     //         ". . . . . . . . . . . .";
-//     // }
-// }
