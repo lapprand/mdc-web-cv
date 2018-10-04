@@ -11,10 +11,10 @@ anime({
   fillOpacity: [
     0, 1
   ],
-  easing: 'easeOutSine',
-  duration: 750,
+  easing: [0, 0, 0.2, 1],
+  duration: 300,
   delay(el, i) {
-    return i * 50;
+    return i * 30;
   },
   loop: false,
   autoplay: true,
