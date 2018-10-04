@@ -1,8 +1,8 @@
 // Import fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Mirza:400,700");
 
-// Reset browser styles
-@import "../node_modules/reset-css/sass/reset";
+// Normalize css
+@import "../node_modules/normalize.css/normalize.css";
 
 // $mdc-theme-primary: #212121;
 // $mdc-theme-secondary: #ffeb3b;

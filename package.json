@@ -42,6 +42,6 @@
     "@material/theme": "^0.39.1",
     "@material/typography": "^0.39.0",
     "animejs": "^2.2.0",
-    "reset-css": "^4.0.1"
+    "normalize.css": "^8.0.0"
   }
 }
