@@ -31,15 +31,26 @@ html {
         font-display: swap;
         font-family: $font-primary;
 
-        .card {
-            &-title {
-                @include mdc-typography(headline5);
+        .mdc-card {
+            &__primary {
+                padding: 1rem;
             }
 
-            &-text {
-                @include mdc-typography(body1);
+            &__secondary {
+                padding: 0px 1rem 1rem 1rem;
+            }
+
+            .card {
+                &-title {
+                    @include mdc-typography(headline6);
+                }
+    
+                &-text {
+                    @include mdc-typography(body2);
+                }
             }
         }
+
         
         h1 {
             // @include interpolate(font-size, 320px, 1100px, 32px, 60px);
