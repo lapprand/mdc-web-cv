@@ -40,8 +40,3 @@ const fadeInContent = anime({
   opacity: [0, 1],
   autoplay: false
 });
-
-
-var cards = document.querySelectorAll('.content .mdc-card');
-
-console.log(cards);
