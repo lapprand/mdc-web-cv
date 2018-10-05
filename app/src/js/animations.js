@@ -26,6 +26,13 @@ const slideUp = anime({
   translateY: [
     '30vh', 0,
   ],
+  padding: '1rem',
+  // borderTop: ['1px solid #67daff'],
+  // borderBottom: ['1px solid #67daff'],
+  // borderLeft: ['1px solid #67daff'],
+  // borderRight: ['1px solid #67daff'],
+  border: '1px dotted #67daff',
+  borderRadius: '4px',
   duration: 300,
   easing: [0.4, 0.0, 0.2, 1],
   autoplay: false,
