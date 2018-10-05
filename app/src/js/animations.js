@@ -33,10 +33,15 @@ const slideUp = anime({
 });
 
 const fadeInContent = anime({
-  targets: '.content',
+  targets: '.content .mdc-card',
   easing: [0.0, 0.0, 0.2, 1],
   duration: 150,
-  delay: 50,
+  delay: (el, i, l) => { return i * 50; },
   opacity: [0, 1],
   autoplay: false
 });
+
+
+var cards = document.querySelectorAll('.content .mdc-card');
+
+console.log(cards);
