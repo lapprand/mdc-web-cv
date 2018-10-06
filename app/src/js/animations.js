@@ -6,8 +6,8 @@ anime({
   strokeDashoffset: [
     anime.setDashoffset, 0,
   ],
-  stroke: ['#67daff', '#67daff', '#002f6c'],
-  fill: ['#67daff', '#67daff', '#01579b'],
+  stroke: ['#f50057', '#f50057', '#01579b'],
+  fill: ['#f50057', '#f50057', '#ffeb3b'],
   fillOpacity: [
     0, 1
   ],
