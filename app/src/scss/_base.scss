@@ -9,10 +9,6 @@ $orange-dark: #ff7730;
 $blue-light: #2998ff;
 $blue-dark: #5643fa;
 
-// FONT VARIABLES
-$font-primary: "Open Sans", sans-serif;
-$font-display: "Mirza", monospace;
-
 $enable-shadows: true;
 $card-corner-radius: 4px;
 
@@ -26,9 +22,6 @@ $card-corner-radius: 4px;
 html {
 
     body {
-
-        font-display: swap;
-        font-family: $font-primary;
 
         .mdc-card {
             @include mdc-card-corner-radius($card-corner-radius);
