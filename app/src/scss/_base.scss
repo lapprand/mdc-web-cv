@@ -20,28 +20,47 @@ $card-corner-radius: 4px;
 }
 
 html {
+    @include mdc-typography-overflow-ellipsis;
+    white-space: normal;
+
+    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
 
     body {
 
         .mdc-card {
-            @include mdc-card-corner-radius($card-corner-radius);
+            @include mdc-card-shape-radius($card-corner-radius);
 
-            &__primary {
+            &__primary, &__secondary {
                 padding: 1rem;
             }
 
-            &__secondary {
-                padding: 0px 1rem 1rem 1rem;
-            }
+            &__primary {
+                // display: inline-flex;
+                // vertical-align: middle;
+                // align-items: center;
 
+                // .material-icons {
+                //     padding-right: 1rem;
+                // }
+            }
+            
             .card {
                 &-title {
                     @include mdc-typography(headline6);
                 }
-    
+                
                 &-text {
-                    @include mdc-typography(body2);
+                    @include mdc-typography(body1);
                 }
+            }
+        }
+        
+        .mdc-list-item {
+            height: auto;
+
+            &__text {
+            @include mdc-typography-overflow-ellipsis;
+            white-space: normal;
             }
         }
 
