@@ -5,14 +5,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
+  target: 'web',
   mode: 'development',
   entry: [
     path.join(__dirname, 'app', 'index.js'),
+    path.join(__dirname, 'app', 'index.html'),
     path.join(__dirname, 'app', 'index.scss')
   ],
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -101,10 +103,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'app', 'index.html')
     }),
-    new CleanWebpackPlugin([path.resolve(__dirname, 'dist')])
+    new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
+    new webpack.HotModuleReplacementPlugin()
   ],
   devtool: 'source-map',
-  // devServer: {
-  //   publicPath: path.join('/dist/')
-  // }
+  devServer: {
+    contentBase: path.join(__dirname, 'app'),
+    watchContentBase: true,
+    publicPath: '/',
+    inline: true,
+    hot: true,
+  }
 };

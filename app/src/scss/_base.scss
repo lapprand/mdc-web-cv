@@ -33,34 +33,14 @@ html {
             &__primary, &__secondary {
                 padding: 1rem;
             }
-
-            &__primary {
-                // display: inline-flex;
-                // vertical-align: middle;
-                // align-items: center;
-
-                // .material-icons {
-                //     padding-right: 1rem;
-                // }
-            }
-            
-            .card {
-                &-title {
-                    @include mdc-typography(headline6);
-                }
-                
-                &-text {
-                    @include mdc-typography(body1);
-                }
-            }
         }
         
         .mdc-list-item {
             height: auto;
 
             &__text {
-            @include mdc-typography-overflow-ellipsis;
-            white-space: normal;
+                @include mdc-typography-overflow-ellipsis;
+                white-space: normal;
             }
         }
 
