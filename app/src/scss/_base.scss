@@ -1,14 +1,3 @@
-// GRADIENT COLORS 
-$green: #8bc34a;
-$green-light: #bef67a;
-$green-dark: #5a9216;
-
-$orange-light: #ffb900;
-$orange-dark: #ff7730;
-
-$blue-light: #2998ff;
-$blue-dark: #5643fa;
-
 $enable-shadows: true;
 $card-corner-radius: 4px;
 
@@ -23,7 +12,7 @@ html {
     @include mdc-typography-overflow-ellipsis;
     white-space: normal;
 
-    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+    background-image: url("src/media/paper-fibers.png");
 
     body {
 
@@ -32,6 +21,10 @@ html {
 
             &__primary, &__secondary {
                 padding: 1rem;
+            }
+
+            .card-title {
+                @include mdc-typography(headline6);
             }
         }
         
@@ -42,6 +35,18 @@ html {
                 @include mdc-typography-overflow-ellipsis;
                 white-space: normal;
             }
+            
+            &__graphic {
+                padding: 6px;
+                border-radius: $card-corner-radius;
+                background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+                background-blend-mode: multiply;
+
+
+                svg path:nth-child(2) {
+                    fill: #fff59d;
+                }
+            }
         }
 
         .fit-viewport {
@@ -49,16 +54,5 @@ html {
             height: 100vh;
             width: 100vw;
         }
-    }
-}
-.gradient {
-    &-orange {
-        background-image: linear-gradient(to right bottom, $orange-light, $orange-dark);
-    }
-    &-green {
-        background-image: linear-gradient(to right bottom, $green-light, $green-dark);
-    }
-    &-blue {
-        background-image: linear-gradient(to right bottom, $blue-light, $blue-dark);
     }
 }
