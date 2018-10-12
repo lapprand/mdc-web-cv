@@ -12,7 +12,7 @@
 </head>
 
 <body class="mdc-typography">
-    <div class="loader">
+    <div id="loader">
         <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
             <div class="mdc-linear-progress__buffering-dots"></div>
             <div class="mdc-linear-progress__buffer"></div>
@@ -25,17 +25,15 @@
         </div>
     </div>
 
-    <div class="fit-viewport">
-        <div class="mdc-layout-grid">
-            <div class="mdc-layout-grid__inner">
-                <div class="mdc-layout-grid__cell--span-12">
-                    <div class="header">
-                        <img markup-inline src="./src/media/lapp.svg" />
-                    </div>
+    <div id="content" class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell--span-12">
+                <div class="header">
+                    <img markup-inline src="./src/media/lapp.svg" />
                 </div>
-
-                <div class="mdc-layout-grid__cell--span-12 content">${require('./src/html/_content.html')}</div>
             </div>
+
+            <div class="mdc-layout-grid__cell--span-12 content">${require('./src/html/_content.html')}</div>
         </div>
     </div>
 </body>
