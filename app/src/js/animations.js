@@ -41,5 +41,6 @@ const fadeInContent = anime({
   duration: 150,
   delay: (el, i, l) => { return i * 50; },
   opacity: [0, 1],
-  autoplay: false
+  autoplay: false,
+  complete: _ => { require('./scroll'); }
 });

@@ -1,15 +1,10 @@
 // Normalize css
 @import "../node_modules/normalize.css/normalize.css";
 
-// $mdc-theme-primary: #212121;
-// $mdc-theme-secondary: #ffeb3b;
-// $mdc-theme-on-primary: #ffffff;
-// $mdc-theme-on-secondary: #000000;
-
-$mdc-theme-primary: #95dff3;
-$mdc-theme-on-primary: #002f6c;
-$mdc-theme-secondary: #efe6fe;
-$mdc-theme-on-secondary: #442C2E;
+$mdc-theme-primary: #bbdefb;
+$mdc-theme-on-primary: #002e6b;
+$mdc-theme-secondary: #90caf9;
+$mdc-theme-on-secondary: #002e6b;
 $mdc-theme-surface: #e3f2fd;
 $mdc-theme-on-surface: #442C2E;
 $mdc-theme-background: #FFFFFF;
@@ -24,8 +19,7 @@ $mdc-theme-on-background: #442C2E;
 @import "@material/shape/functions";
 @import "@material/card/mdc-card";
 @import "@material/list/mdc-list";
+@import "@material/fab/mdc-fab";
 
-@import "src/scss/interpolate";
 @import "src/scss/base";
-@import "src/scss/grid";
 
