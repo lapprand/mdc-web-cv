@@ -6,8 +6,8 @@ anime({
   strokeDashoffset: [
     anime.setDashoffset, 0,
   ],
-  stroke: ['#00b0ff', '#00b0ff', '#00b0ff', '#002f6c'],
-  fill: ['#00b0ff', '#00b0ff', '#00b0ff', '#002f6c'],
+  stroke: ['#00b0ff', '#00b0ff', '#00b0ff', 'rgb(0, 33, 113)'],
+  fill: ['#00b0ff', '#00b0ff', '#00b0ff', 'rgb(0, 33, 113)'],
   fillOpacity: [
     0, 1
   ],
@@ -27,7 +27,7 @@ const slideUp = anime({
     '30vh', 0,
   ],
   padding: '1rem',
-  border: '1px dotted #67daff',
+  border: '1px solid rgb(0, 33, 113)',
   borderRadius: '4px',
   duration: 300,
   easing: [0.4, 0.0, 0.2, 1],

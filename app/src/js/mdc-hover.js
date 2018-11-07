@@ -1,12 +1,12 @@
-var hoverEls = document.querySelectorAll('.hover');
-
-hoverEls.forEach(function(hoverEl) {
-  hoverEl.addEventListener('mouseenter', function () {
-    this.classList.remove('mdc-elevation--z0');
-    this.classList.add('mdc-elevation--z8');
+export function addHover(el, initialElevation, endElevation) {
+  el.classList.add("mdc-elevation-transition");
+  el.classList.add("mdc-elevation--z" + initialElevation);
+  el.addEventListener("mouseenter", function () {
+    this.classList.remove("mdc-elevation--z" + initialElevation);
+    this.classList.add("mdc-elevation--z" + endElevation);
   });
-  hoverEl.addEventListener('mouseleave', function () {
-    this.classList.remove('mdc-elevation--z8');
-    this.classList.add('mdc-elevation--z0');
+  el.addEventListener("mouseleave", function () {
+    this.classList.remove("mdc-elevation--z" + endElevation);
+    this.classList.add("mdc-elevation--z" + initialElevation);
   });
-});
+}
