@@ -77,7 +77,10 @@ html {
         }
 
         .mdc-fab {
-            color: $mdc-theme-on-secondary;
+            @include mdc-fab-container-color(transparent);
+            @include mdc-fab-ink-color($mdc-theme-on-secondary);
+            border: $mdc-theme-on-primary solid 1px;
+            // color: $mdc-theme-on-secondary;
         }
     }
     
