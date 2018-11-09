@@ -6,7 +6,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   target: 'web',
-  mode: 'development',
+  mode: 'production',
   entry: [
     path.join(__dirname, 'app', 'index.js'),
     path.join(__dirname, 'app', 'index.html'),
@@ -117,6 +117,9 @@ module.exports = {
   ],
   devtool: 'source-map',
   devServer: {
+    host: "0.0.0.0",
+    port: 8080,
+    disableHostCheck: true,
     contentBase: path.join(__dirname, 'app'),
     watchContentBase: true,
     publicPath: '/',
