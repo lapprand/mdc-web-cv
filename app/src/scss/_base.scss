@@ -73,14 +73,14 @@ html {
                 }
             }
 
-            background-image: linear-gradient(to left, #4facfe 0%, #00f2fe 100%);
+            background-image: linear-gradient(to right, #a3e8ea, #7bb5d6);
             background-repeat: no-repeat;
             background-size: 0% 100%;
             
             will-change: background-size;
+            transition: background-size 250ms $mdc-animation-acceleration-curve-timing-function;
             &:hover {
-                // transition: mdc-animation-enter(background-size, 2000ms);
-                transition: all 300ms ease-in;
+                transition: background-size 300ms $mdc-animation-deceleration-curve-timing-function;
                 background-size: 100% 100%;
             }
         }
