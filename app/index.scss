@@ -1,7 +1,7 @@
 // Normalize css
 @import "../node_modules/normalize.css/normalize.css";
 
-$mdc-theme-primary: #fce4ec;
+$mdc-theme-primary: #002171;
 $mdc-theme-on-primary: #002171;
 $mdc-theme-secondary: #f8bbd0;
 $mdc-theme-on-secondary: #002171;
@@ -13,13 +13,15 @@ $mdc-theme-on-background: #002171;
 // Material Design Components
 @import "@material/linear-progress/mdc-linear-progress";
 @import "@material/layout-grid/mdc-layout-grid";
-@import "@material/elevation/mdc-elevation";
 @import "@material/typography/mdc-typography";
-@import "@material/shape/mixins";
+@import "@material/elevation/mdc-elevation";
+@import "@material/animation/variables";
 @import "@material/shape/functions";
-@import "@material/card/mdc-card";
 @import "@material/list/mdc-list";
+@import "@material/card/mdc-card";
+@import "@material/shape/mixins";
 @import "@material/fab/mdc-fab";
 
 @import "src/scss/base";
+@import "src/scss/animations";
 

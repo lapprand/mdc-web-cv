@@ -89,31 +89,24 @@ module.exports = {
         ]
       },
       {
-        test: /\.js$/,
-        include: [
-          path.resolve(__dirname, 'app')
-        ],
-        exclude: [
-          path.resolve(__dirname, 'node_modules'),
-          path.resolve(__dirname, 'bower_components')
-        ],
-        loader: 'babel-loader',
-        query: {
-          presets: ['@babel/preset-env']
+        test: /\.m?js$/,
+        include: /(app)/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader?cacheDirectory=true',
+          options: {
+            presets: ['@babel/preset-env'],
+            cacheCompression: true
+          }
         }
       }
     ]
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'app', 'index.html')
     }),
-    new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
-    new webpack.HotModuleReplacementPlugin()
+    new CleanWebpackPlugin([path.resolve(__dirname, 'dist')])
   ],
   devtool: 'source-map',
   devServer: {
@@ -124,6 +117,5 @@ module.exports = {
     watchContentBase: true,
     publicPath: '/',
     inline: true,
-    hot: true,
   }
 };

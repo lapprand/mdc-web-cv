@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --progress --mode development --hot --inline"
+    "start": "webpack-dev-server --progress --mode production --inline"
   },
   "author": "Arthur Lapprand <lapprand@gmail.com>",
   "repository": {
@@ -32,6 +32,7 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "@material/animation": "^0.41.0",
     "@material/button": "^0.41.0",
     "@material/card": "^0.41.0",
     "@material/elevation": "^0.41.0",
@@ -40,11 +41,9 @@
     "@material/linear-progress": "^0.41.0",
     "@material/list": "^0.41.0",
     "@material/ripple": "^0.41.0",
-    "@material/shape": "^0.41.0",
     "@material/theme": "^0.41.0",
     "@material/typography": "^0.41.0",
     "animejs": "^2.2.0",
-    "normalize.css": "^8.0.0",
-    "perfect-scrollbar": "^1.4.0"
+    "normalize.css": "^8.0.0"
   }
 }

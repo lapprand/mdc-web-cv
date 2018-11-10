@@ -1,5 +1,7 @@
 import anime from 'animejs';
 
+let header = document.querySelector(".header");
+
 // Line animation
 anime({
   targets: '.lines path',
@@ -18,7 +20,13 @@ anime({
   },
   loop: false,
   autoplay: true,
-  complete: _ => { slideUp.play(); }
+  // complete: _ => { slideUp.play(); }
+  complete: _ => {
+    header.addEventListener("animationend", () => fadeInContent.play());
+    window.requestAnimationFrame(function (time) {
+      header.classList.toggle("header--animating");
+    });
+  }
 });
 
 const slideUp = anime({
@@ -26,13 +34,15 @@ const slideUp = anime({
   translateY: [
     '30vh', 0,
   ],
-  padding: '1rem',
-  border: '1px solid rgb(0, 33, 113)',
-  borderRadius: '4px',
-  duration: 300,
+  duration: 350,
   easing: [0.4, 0.0, 0.2, 1],
   autoplay: false,
-  complete: _ => { fadeInContent.play(); }
+  complete: _ => {
+    window.requestAnimationFrame(function (time) {
+      header.classList.add("header--slidingup");
+    });
+    fadeInContent.play();
+  }
 });
 
 const fadeInContent = anime({

@@ -1,0 +1,27 @@
+@keyframes slide-up {
+    from {
+        padding: 1rem;
+        border: 1px solid transparent;
+        transform: translateY(30vh);
+    }
+
+    to {
+        padding: 1rem;
+        border: 1px solid rgb(0, 33, 113);
+        transform: translateY(0);
+    }
+}
+
+@keyframes animate-border {
+    from {
+        padding: 1rem;
+        border: 1px solid rgb(0, 33, 113);
+        border-radius: 0px;
+    }
+
+    to {
+        padding: 1rem;
+        border: 1px solid rgb(0, 33, 113);
+        border-radius: 4px;
+    }
+}
