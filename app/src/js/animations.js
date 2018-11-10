@@ -29,22 +29,6 @@ anime({
   }
 });
 
-const slideUp = anime({
-  targets: '.header',
-  translateY: [
-    '30vh', 0,
-  ],
-  duration: 350,
-  easing: [0.4, 0.0, 0.2, 1],
-  autoplay: false,
-  complete: _ => {
-    window.requestAnimationFrame(function (time) {
-      header.classList.add("header--slidingup");
-    });
-    fadeInContent.play();
-  }
-});
-
 const fadeInContent = anime({
   targets: '.content .mdc-card',
   easing: [0.0, 0.0, 0.2, 1],
