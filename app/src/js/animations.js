@@ -22,24 +22,38 @@ anime({
   autoplay: true,
   // complete: _ => { slideUp.play(); }
   complete: _ => {
-    header.addEventListener("animationend", () => fadeInContent.play());
+    header.addEventListener("animationend", (e) => {
+      if (e.animationName === 'slide-up') {
+        fadeInContent();
+      }
+    });
     window.requestAnimationFrame(function (time) {
       header.classList.toggle("header--animating");
     });
   }
 });
 
-const fadeInContent = anime({
-  targets: '.content .mdc-card',
-  easing: [0.0, 0.0, 0.2, 1],
-  duration: 150,
-  delay: (el, i, l) => { return i * 50; },
-  opacity: [0, 1],
-  autoplay: false,
-  complete: _ => { require('./scroll'); }
-});
+const fadeInContentTimeline = anime.timeline();
 
-
+function fadeInContent() {
+  fadeInContentTimeline
+    .add({
+      targets: '.chips .mdc-chip',
+      easing: [0.0, 0.0, 0.2, 1],
+      duration: 150,
+      delay: (el, i, l) => { return i * 50; },
+      opacity: [0, 1]
+    })
+    .add({
+      targets: '.content .mdc-card',
+      easing: [0.0, 0.0, 0.2, 1],
+      duration: 150,
+      delay: (el, i, l) => { return i * 50; },
+      opacity: [0, 1],
+      autoplay: false,
+      complete: _ => { require('./scroll'); }
+    });
+}
 
 // Set gradient expand position on hover
 const calcPos = (e) => {

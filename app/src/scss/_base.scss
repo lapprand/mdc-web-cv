@@ -1,15 +1,15 @@
 $enable-shadows: true;
 $card-corner-radius: 4px;
 
-* {
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+// * {
+//     overflow-wrap: break-word;
+//     word-wrap: break-word;
 
-    word-break: break-all;
-    word-break: break-word;
+//     word-break: break-all;
+//     word-break: break-word;
 
-    hyphens: auto;
-}
+//     hyphens: auto;
+// }
 
 #loader {
     position: absolute;
@@ -48,11 +48,11 @@ html {
             }
             
             &--animating {
-                animation-name: slide-up, animate-border;
-                animation-duration: 350ms, 1000ms;
-                animation-delay: 0ms, 350ms;
-                animation-timing-function: $mdc-animation-standard-curve-timing-function, $mdc-animation-standard-curve-timing-function;
-                animation-iteration-count: 1, 1;
+                animation-name: slide-up;
+                animation-duration: 350ms;
+                animation-delay: 0ms;
+                animation-timing-function: $mdc-animation-standard-curve-timing-function;
+                animation-iteration-count: 1;
                 animation-fill-mode: forwards;
             }
         }
@@ -61,16 +61,27 @@ html {
             text-decoration: none;
         }
 
-        .mdc-chip {
-            @include mdc-card-outline($mdc-theme-on-background, 1px);
-            @include mdc-card-shape-radius($card-corner-radius);
-            background-color: transparent;
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+            .mdc-chip {
+                @include mdc-card-outline($mdc-theme-on-background, 1px);
+                @include mdc-card-shape-radius($card-corner-radius);
+                background-color: transparent;
+                margin: 0px 2px;
+                opacity: 0;
+            }
         }
 
+
         .mdc-card {
-            @include mdc-card-shape-radius($card-corner-radius);
             @include mdc-card-outline($mdc-theme-on-background, 1px);
+            @include mdc-card-shape-radius($card-corner-radius);
             @include mdc-card-fill-color(transparent);
+
+            opacity: 0;
 
             &__primary, &__secondary {
                 padding: 1rem;

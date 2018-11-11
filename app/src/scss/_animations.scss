@@ -12,20 +12,6 @@
     }
 }
 
-@keyframes animate-border {
-    from {
-        padding: 1rem;
-        border: 1px solid rgb(0, 33, 113);
-        border-radius: 0px;
-    }
-
-    to {
-        padding: 1rem;
-        border: 1px solid rgb(0, 33, 113);
-        border-radius: 4px;
-    }
-}
-
 .hover-gradient {
     &--card {
         background-image: linear-gradient(to right, #a3e8ea, #7bb5d6);
@@ -40,8 +26,6 @@
     }
 
     &--chip {
-        color: $mdc-theme-on-primary;
-        mix-blend-mode: multiply;
         background-image: linear-gradient(to bottom, #fc921a, #f7b733);
         background-repeat: no-repeat;
         background-size: 0% 0%;
@@ -50,6 +34,10 @@
         transition: background-size 200ms $mdc-animation-acceleration-curve-timing-function;
         &:hover {
             transition: background-size 250ms $mdc-animation-deceleration-curve-timing-function;
+        }
+
+        path {
+            fill: $mdc-theme-on-primary;
         }
     }
 }
