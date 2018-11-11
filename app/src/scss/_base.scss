@@ -24,7 +24,6 @@ $card-corner-radius: 4px;
 }
 
 html {
-    @include mdc-typography-overflow-ellipsis;
     scroll-behavior: smooth;
     white-space: normal;
     overflow: visible;
@@ -38,7 +37,7 @@ html {
         }
 
         .header {
-            @include mdc-card-shape-radius($card-corner-radius);
+            @include mdc-shape-radius($mdc-shape-large-component-radius, false);
             padding: 1rem;
             transform: translateY(30vh);
             border: 1px solid transparent;
@@ -69,20 +68,22 @@ html {
             
             .mdc-chip {
                 @include mdc-card-outline($mdc-theme-on-background, 1px);
-                @include mdc-card-shape-radius($card-corner-radius);
+                @include mdc-shape-radius(mdc-shape-resolve-percentage-radius(32px, $mdc-shape-small-component-radius));
                 background-color: transparent;
-                margin: 0px 2px;
+                margin: 2px 2px;
                 opacity: 0;
                 path {
                     fill: $mdc-theme-on-primary;
                 }
+
+
             }
         }
 
 
         .mdc-card {
             @include mdc-card-outline($mdc-theme-on-background, 1px);
-            @include mdc-card-shape-radius($card-corner-radius);
+            @include mdc-shape-radius($mdc-shape-large-component-radius, false);
             @include mdc-card-fill-color(transparent);
 
             opacity: 0;
@@ -95,6 +96,19 @@ html {
                 &-title {
                     @include mdc-typography(headline6);
                     color: $mdc-theme-on-primary;
+                }
+
+                &-text {
+                    // @include mdc-typography-overflow-ellipsis;
+                    max-width: 900px;
+                    white-space: normal;
+                    overflow-wrap: break-word;
+                    word-wrap: break-word;
+
+                    word-break: break-all;
+                    word-break: break-word;
+
+                    hyphens: auto;
                 }
             }
         }
@@ -136,6 +150,44 @@ html {
         .app-fab--absolute {
             bottom: 1.5rem;
             right: 3rem;
+        }
+
+        .mdc-chip {
+            margin: 0px 2px;
+        }
+    }
+}
+
+
+.project-item {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    grid-gap: 0px 16px;
+
+    &-img {
+        justify-self: center;
+        align-self: center;
+        height: 48px;
+        width: 48px;
+    }
+
+    &-text {
+        @include mdc-typography-overflow-ellipsis;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        word-break: break-all;
+        word-break: break-word;
+
+        hyphens: auto;
+
+        &__title {
+            padding-bottom: 12px;
         }
     }
 }

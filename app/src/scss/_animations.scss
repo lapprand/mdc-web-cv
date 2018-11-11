@@ -20,7 +20,7 @@
 
 .header {
     @extend %hover-gradient;
-    background-image: linear-gradient(to top, #18d395, #38ef7d);
+    background-image: linear-gradient(to top, #21da9c, #38ef7d);
     transition: background-size 250ms $mdc-animation-acceleration-curve-timing-function;
 
     &:hover {
@@ -30,7 +30,7 @@
 
 .mdc-card {
     @extend %hover-gradient;
-    background-image: linear-gradient(to right, #a3e8ea, #7bb5d6);
+    background-image: linear-gradient(to bottom, #a3e8ea, #7bc8d6);
     transition: background-size 250ms $mdc-animation-acceleration-curve-timing-function;
 
     &:hover {
