@@ -25,3 +25,31 @@
         border-radius: 4px;
     }
 }
+
+.hover-gradient {
+    &--card {
+        background-image: linear-gradient(to right, #a3e8ea, #7bb5d6);
+        background-repeat: no-repeat;
+        background-size: 0% 0%;
+        
+        will-change: background-size;
+        transition: background-size 250ms $mdc-animation-acceleration-curve-timing-function;
+        &:hover {
+            transition: background-size 300ms $mdc-animation-deceleration-curve-timing-function;
+        }
+    }
+
+    &--chip {
+        color: $mdc-theme-on-primary;
+        mix-blend-mode: multiply;
+        background-image: linear-gradient(to bottom, #fc921a, #f7b733);
+        background-repeat: no-repeat;
+        background-size: 0% 0%;
+        
+        will-change: background-size;
+        transition: background-size 200ms $mdc-animation-acceleration-curve-timing-function;
+        &:hover {
+            transition: background-size 250ms $mdc-animation-deceleration-curve-timing-function;
+        }
+    }
+}

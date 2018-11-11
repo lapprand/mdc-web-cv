@@ -38,3 +38,37 @@ const fadeInContent = anime({
   autoplay: false,
   complete: _ => { require('./scroll'); }
 });
+
+
+
+// Set gradient expand position on hover
+const calcPos = (e) => {
+  const posX = e.offsetX / e.target.offsetWidth * 100;
+  const posY = e.offsetY / e.target.offsetHeight * 100;
+  console.log(e);
+  console.log(`${posX}% ${posY}%`);
+  return `${posX}% ${posY}%`;
+}
+
+function onMouseEnter(e) {
+  e.target.style.backgroundPosition = calcPos(e);
+  e.target.style.backgroundSize = "100% 100%";
+};
+
+function onMouseLeave(e) {
+  e.target.style.backgroundPosition = calcPos(e);
+  e.target.style.backgroundSize = "0% 0%";
+};
+
+const chips = document.querySelectorAll('.mdc-chip');
+const cards = document.querySelectorAll('.mdc-card');
+
+for (let chip of chips) {
+  chip.onmouseenter = (e) => onMouseEnter(e);
+  chip.onmouseleave = (e) => onMouseLeave(e);
+}
+
+for (let card of cards) {
+  card.onmouseenter = (e) => onMouseEnter(e);
+  card.onmouseleave = (e) => onMouseLeave(e);
+}
