@@ -38,6 +38,7 @@ html {
         }
 
         .header {
+            @include mdc-card-shape-radius($card-corner-radius);
             padding: 1rem;
             transform: translateY(30vh);
             border: 1px solid transparent;
@@ -72,6 +73,9 @@ html {
                 background-color: transparent;
                 margin: 0px 2px;
                 opacity: 0;
+                path {
+                    fill: $mdc-theme-on-primary;
+                }
             }
         }
 

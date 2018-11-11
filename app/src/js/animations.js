@@ -86,3 +86,6 @@ for (let card of cards) {
   card.onmouseenter = (e) => onMouseEnter(e);
   card.onmouseleave = (e) => onMouseLeave(e);
 }
+
+header.onmouseenter = (e) => onMouseEnter(e);
+header.onmouseleave = (e) => onMouseLeave(e);
