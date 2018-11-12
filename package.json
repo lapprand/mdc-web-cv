@@ -17,7 +17,7 @@
     "@babel/preset-env": "^7.1.5",
     "autoprefixer": "^9.3.1",
     "babel-loader": "^8.0.4",
-    "clean-webpack-plugin": "^0.1.19",
+    "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^1.0.1",
     "extract-loader": "^3.0.0",
     "file-loader": "^2.0.0",
@@ -36,7 +36,6 @@
     "@material/button": "^0.41.0",
     "@material/card": "^0.41.0",
     "@material/chips": "^0.41.0",
-    "@material/elevation": "^0.41.0",
     "@material/fab": "^0.41.0",
     "@material/layout-grid": "^0.41.0",
     "@material/linear-progress": "^0.41.0",
@@ -45,6 +44,6 @@
     "@material/theme": "^0.41.0",
     "@material/typography": "^0.41.0",
     "animejs": "^2.2.0",
-    "normalize.css": "^8.0.0"
+    "normalize.css": "^8.0.1"
   }
 }

@@ -59,8 +59,6 @@ function fadeInContent() {
 const calcPos = (e) => {
   const posX = e.offsetX / e.target.offsetWidth * 100;
   const posY = e.offsetY / e.target.offsetHeight * 100;
-  console.log(e);
-  console.log(`${posX}% ${posY}%`);
   return `${posX}% ${posY}%`;
 }
 

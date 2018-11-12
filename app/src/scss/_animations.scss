@@ -32,7 +32,6 @@
     @extend %hover-gradient;
     background-image: linear-gradient(to bottom, #a3e8ea, #7bc8d6);
     transition: background-size 250ms $mdc-animation-acceleration-curve-timing-function;
-
     &:hover {
         transition: background-size 300ms $mdc-animation-deceleration-curve-timing-function;
     }
