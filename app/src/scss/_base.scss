@@ -1,4 +1,5 @@
 $card-corner-radius: 4px;
+$width: 700px;
 
 // * {
 //     overflow-wrap: break-word;
@@ -32,7 +33,7 @@ html {
     body {
 
         .mdc-layout-grid {
-            max-width: 900px;
+            max-width: $width;
         }
 
         .header {
@@ -71,17 +72,15 @@ html {
                 background-color: transparent;
                 margin: 2px 2px;
                 opacity: 0;
+
                 path {
                     fill: $mdc-theme-on-primary;
                 }
-
-
             }
         }
 
 
         .mdc-card {
-            // @include mdc-card-outline($mdc-theme-on-background, 1px);
             @include mdc-shape-radius($mdc-shape-large-component-radius, false);
             @include mdc-card-fill-color(transparent);
 
@@ -98,8 +97,6 @@ html {
                 }
 
                 &-text {
-                    // @include mdc-typography-overflow-ellipsis;
-                    max-width: 900px;
                     white-space: normal;
                     overflow-wrap: break-word;
                     word-wrap: break-word;
@@ -114,8 +111,11 @@ html {
             height: auto;
 
             &__text {
-                @include mdc-typography-overflow-ellipsis;
                 white-space: normal;
+            }
+            
+            &__secondary-text {
+                @include mdc-typography-baseline-top(32px);
             }
             
             &__graphic {
@@ -133,7 +133,6 @@ html {
             @include mdc-fab-container-color(transparent);
             @include mdc-fab-ink-color($mdc-theme-on-secondary);
             border: $mdc-theme-on-primary solid 1px;
-            // color: $mdc-theme-on-secondary;
         }
     }
     
@@ -143,7 +142,7 @@ html {
         right: 2rem;
     }
 
-    @media(min-width: 900px) {
+    @media(min-width: $width) {
         .app-fab--absolute {
             bottom: 1.5rem;
             right: 3rem;
@@ -158,18 +157,25 @@ html {
 
 .project-item {
     display: grid;
-    grid-template-columns: 48px 1fr;
-    grid-gap: 0px 16px;
+    grid-template-rows: 32px 1fr;
+    grid-gap: 24px 0px;
+
+    &-top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
 
     &-img {
         justify-self: center;
         align-self: center;
-        height: 48px;
-        width: 48px;
+        height: 32px;
+        width: 32px;
+        padding-right: 16px;
     }
 
     &-text {
-        @include mdc-typography-overflow-ellipsis;
         display: flex;
         flex-direction: column;
         align-items: baseline;
@@ -182,9 +188,5 @@ html {
         word-break: break-word;
 
         hyphens: auto;
-
-        &__title {
-            padding-bottom: 12px;
-        }
     }
 }
