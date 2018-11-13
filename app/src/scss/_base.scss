@@ -92,7 +92,7 @@ html {
 
             .card {
                 &-title {
-                    @include mdc-typography(headline6);
+                    @include mdc-typography(headline5);
                     color: $mdc-theme-on-primary;
                 }
 
@@ -141,24 +141,13 @@ html {
         bottom: 1.5rem;
         right: 2rem;
     }
-
-    @media(min-width: $width) {
-        .app-fab--absolute {
-            bottom: 1.5rem;
-            right: 3rem;
-        }
-
-        .mdc-chip {
-            margin: 0px 2px;
-        }
-    }
 }
 
 
 .project-item {
     display: grid;
     grid-template-rows: 32px 1fr;
-    grid-gap: 24px 0px;
+    grid-gap: 8px 0px;
 
     &-top {
         display: flex;
@@ -186,7 +175,16 @@ html {
 
         word-break: break-all;
         word-break: break-word;
+    }
+}
 
-        hyphens: auto;
+@media(min-width: $width) {
+    .app-fab--absolute {
+        bottom: 1.5rem;
+        right: 3rem;
+    }
+
+    .mdc-chip {
+        margin: 0px 2px;
     }
 }
