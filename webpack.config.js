@@ -19,11 +19,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(ico|png|jpg|gif|xml|svg|webmanifest)$/,
         use: [
           {
             loader: 'file-loader',
-            options: {}
+            options: {
+              name: '[name].[ext]'
+            }
           }
         ]
       },

@@ -1,3 +1,5 @@
+require('./src/js/favicon');
+
 window.onload = _ => {
     require('./src/js/animations');
     document.querySelector("#loader").style.display = "none";
