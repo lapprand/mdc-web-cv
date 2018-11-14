@@ -48,11 +48,12 @@ function fadeInContent() {
       targets: '.chips .mdc-chip',
       easing: [0.0, 0.0, 0.2, 1],
       duration: 200,
-      delay: (el, i, l) => { return i * 50; },
-      opacity: [0, 1]
+      delay: (el, i, l) => { return i * 100; },
+      opacity: [0, 1],
+      translateY: ['-80px', '0'],
     })
     .add({
-      targets: '.content .mdc-card',
+      targets: '.section',
       easing: [0.0, 0.0, 0.2, 1],
       duration: 250,
       delay: (el, i, l) => { return i * 150; },
@@ -80,18 +81,9 @@ function onMouseLeave(e) {
   e.target.style.backgroundSize = "0% 0%";
 };
 
-const chips = document.querySelectorAll('.mdc-chip');
-const cards = document.querySelectorAll('.mdc-card');
+const hoverEls = document.querySelectorAll('.hover-gradient');
 
-for (let chip of chips) {
-  chip.onmouseenter = (e) => onMouseEnter(e);
-  chip.onmouseleave = (e) => onMouseLeave(e);
+for (let el of hoverEls) {
+  el.onmouseenter = (e) => onMouseEnter(e);
+  el.onmouseleave = (e) => onMouseLeave(e);
 }
-
-for (let card of cards) {
-  card.onmouseenter = (e) => onMouseEnter(e);
-  card.onmouseleave = (e) => onMouseLeave(e);
-}
-
-header.onmouseenter = (e) => onMouseEnter(e);
-header.onmouseleave = (e) => onMouseLeave(e);

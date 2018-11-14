@@ -1,6 +1,7 @@
 $card-corner-radius: 4px;
 $grid-max-width: 700px;
 $grid-min-width: 300px;
+$img-size: 120px;
 
 #loader {
     position: absolute;
@@ -30,7 +31,7 @@ html {
 
 .header {
     @include mdc-shape-radius($mdc-shape-large-component-radius, false);
-    transform: translateY(30vh);
+    transform: translateY(40vh);
     border: 1px solid transparent;
     padding: 1rem;
     
@@ -59,8 +60,8 @@ a, a:hover {
     justify-content: center;
     
     .mdc-chip {
-        @include mdc-card-outline($mdc-theme-on-background, 1px);
         @include mdc-shape-radius(mdc-shape-resolve-percentage-radius(32px, $mdc-shape-small-component-radius));
+        border: 1px solid $mdc-theme-primary;
         background-color: transparent;
         margin: 2px 2px;
         opacity: 0;
@@ -71,34 +72,52 @@ a, a:hover {
     }
 }
 
-
-.mdc-card {
-    @include mdc-shape-radius($mdc-shape-large-component-radius, false);
-    @include mdc-card-fill-color(transparent);
-
+.section {
+    padding: 16px;
     opacity: 0;
+}
 
-    &__primary, &__secondary {
-        padding: 1rem;
+hr {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: 8px auto;
+    height: 0;
+    width: 100%;
+    max-height: 0;
+    font-size: 1px;
+    line-height: 0;
+    clear: both;
+    border: none;
+    border-top: 1px solid $mdc-theme-primary;
+}
+
+.section-header {
+    display: flex;
+    flex-flow: row;
+
+    &__text {
+        color: $mdc-theme-on-primary;
+        white-space: normal;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    
+        word-break: break-all;
+        word-break: break-word;
     }
 
-    .card {
-        &-title {
-            @include mdc-typography(headline5);
-            color: $mdc-theme-on-primary;
-        }
+    &__icon {
+        @include mdc-shape-radius(mdc-shape-resolve-percentage-radius(24px, $mdc-shape-small-component-radius));
+        border: $mdc-theme-on-primary dotted 1px; 
+        align-self: center;
+        margin-right: 16px;
+        padding: 4px;
 
-        &-text {
-            white-space: normal;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-
-            word-break: break-all;
-            word-break: break-word;
+        svg path:nth-child(2) {
+            fill: $mdc-theme-on-primary;
         }
     }
 }
-
 .mdc-list-item {
     height: auto;
 
@@ -112,12 +131,10 @@ a, a:hover {
     
     &__graphic {
         padding: 4px;
-        border: $mdc-theme-on-primary dotted 1px; 
+        
         border-radius: $card-corner-radius;
 
-        svg path:nth-child(2) {
-            fill: $mdc-theme-on-primary;
-        }
+        
     }
 }
 
@@ -139,22 +156,23 @@ a, a:hover {
 
 .project-item {
     display: grid;
-    grid-template-rows: 32px 1fr;
-    grid-gap: 8px 0px;
+    grid-template-rows: auto;
+    grid-gap: 0px 0px;
 
     &-top {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
+        // margin: 20px 0 0 0;
     }
 
     &-img {
         justify-self: center;
         align-self: center;
-        height: 32px;
-        width: 32px;
-        padding-right: 16px;
+        height: 48px;
+        width: 48px;
+        margin-right: 24px;
     }
 
     &-text {
@@ -172,20 +190,21 @@ a, a:hover {
 }
 
 .profile {
-    max-height: 120px;
+    max-height: $img-size;
     opacity: 0;
 }
     
 .wrapper {
+    z-index: -1;
     display: block;
     margin: auto;
     position: relative;
-    padding-top: 100%;
-    max-height: 120px;
-    max-width: 120px;
+    padding-top: $img-size;
+    max-height: $img-size;
+    max-width: $img-size;
 
     img {
-        border: 1px solid rgb(0, 33, 113);
+        border: 1px solid $mdc-theme-primary;
         border-radius: 50%;
         position: absolute;
         left: 0;
@@ -197,14 +216,17 @@ a, a:hover {
 
 
 @media(min-width: $grid-min-width) {
+    $img-size: 150px;
+
     .profile {
         padding: 0.5rem 0;
-        max-height: 150px;
+        max-height: $img-size;
     }
 
     .wrapper {
-        max-height: 150px;
-        max-width: 150px;
+        padding-top: $img-size;
+        max-height: $img-size;
+        max-width: $img-size;
     }
 
     .mdc-chip {
