@@ -1,15 +1,6 @@
 $card-corner-radius: 4px;
-$width: 700px;
-
-// * {
-//     overflow-wrap: break-word;
-//     word-wrap: break-word;
-
-//     word-break: break-all;
-//     word-break: break-word;
-
-//     hyphens: auto;
-// }
+$grid-max-width: 700px;
+$grid-min-width: 300px;
 
 #loader {
     position: absolute;
@@ -21,6 +12,7 @@ $width: 700px;
 #content {
     display: none;
     margin: auto;
+    padding: 1rem 1rem 5rem 1rem;
 }
 
 html {
@@ -29,120 +21,117 @@ html {
     overflow: visible;
 
     background-image: url("src/media/bg.png");
+}
 
-    body {
+.mdc-layout-grid {
+    max-width: $grid-max-width;
+    min-width: $grid-min-width;
+}
 
-        .mdc-layout-grid {
-            max-width: $width;
-        }
-
-        .header {
-            @include mdc-shape-radius($mdc-shape-large-component-radius, false);
-            padding: 1rem;
-            transform: translateY(30vh);
-            border: 1px solid transparent;
-            
-            .lines {
-                height: 10vh;
-                max-height: 50px;
-            }
-            
-            &--animating {
-                animation-name: slide-up;
-                animation-duration: 350ms;
-                animation-delay: 0ms;
-                animation-timing-function: $mdc-animation-standard-curve-timing-function;
-                animation-iteration-count: 1;
-                animation-fill-mode: forwards;
-            }
-        }
-
-        a, a:hover {
-            text-decoration: none;
-        }
-
-        .chips {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            
-            .mdc-chip {
-                @include mdc-card-outline($mdc-theme-on-background, 1px);
-                @include mdc-shape-radius(mdc-shape-resolve-percentage-radius(32px, $mdc-shape-small-component-radius));
-                background-color: transparent;
-                margin: 2px 2px;
-                opacity: 0;
-
-                path {
-                    fill: $mdc-theme-on-primary;
-                }
-            }
-        }
-
-
-        .mdc-card {
-            @include mdc-shape-radius($mdc-shape-large-component-radius, false);
-            @include mdc-card-fill-color(transparent);
-
-            opacity: 0;
-
-            &__primary, &__secondary {
-                padding: 1rem;
-            }
-
-            .card {
-                &-title {
-                    @include mdc-typography(headline5);
-                    color: $mdc-theme-on-primary;
-                }
-
-                &-text {
-                    white-space: normal;
-                    overflow-wrap: break-word;
-                    word-wrap: break-word;
-
-                    word-break: break-all;
-                    word-break: break-word;
-                }
-            }
-        }
-        
-        .mdc-list-item {
-            height: auto;
-
-            &__text {
-                white-space: normal;
-            }
-            
-            &__secondary-text {
-                @include mdc-typography-baseline-top(32px);
-            }
-            
-            &__graphic {
-                padding: 4px;
-                border: $mdc-theme-on-primary dotted 1px; 
-                border-radius: $card-corner-radius;
-
-                svg path:nth-child(2) {
-                    fill: $mdc-theme-on-primary;
-                }
-            }
-        }
-
-        .mdc-fab {
-            @include mdc-fab-container-color(transparent);
-            @include mdc-fab-ink-color($mdc-theme-on-secondary);
-            border: $mdc-theme-on-primary solid 1px;
-        }
+.header {
+    @include mdc-shape-radius($mdc-shape-large-component-radius, false);
+    transform: translateY(30vh);
+    border: 1px solid transparent;
+    padding: 1rem;
+    
+    .lines {
+        height: 10vh;
+        max-height: 50px;
     }
     
-    .app-fab--absolute {
-        position: fixed;
-        bottom: 1.5rem;
-        right: 2rem;
+    &--animating {
+        animation-name: slide-up;
+        animation-duration: 500ms;
+        animation-delay: 100ms;
+        animation-timing-function: $mdc-animation-standard-curve-timing-function;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
     }
 }
 
+a, a:hover {
+    text-decoration: none;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    .mdc-chip {
+        @include mdc-card-outline($mdc-theme-on-background, 1px);
+        @include mdc-shape-radius(mdc-shape-resolve-percentage-radius(32px, $mdc-shape-small-component-radius));
+        background-color: transparent;
+        margin: 2px 2px;
+        opacity: 0;
+
+        path {
+            fill: $mdc-theme-on-primary;
+        }
+    }
+}
+
+
+.mdc-card {
+    @include mdc-shape-radius($mdc-shape-large-component-radius, false);
+    @include mdc-card-fill-color(transparent);
+
+    opacity: 0;
+
+    &__primary, &__secondary {
+        padding: 1rem;
+    }
+
+    .card {
+        &-title {
+            @include mdc-typography(headline5);
+            color: $mdc-theme-on-primary;
+        }
+
+        &-text {
+            white-space: normal;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+
+            word-break: break-all;
+            word-break: break-word;
+        }
+    }
+}
+
+.mdc-list-item {
+    height: auto;
+
+    &__text {
+        white-space: normal;
+    }
+    
+    &__secondary-text {
+        @include mdc-typography-baseline-top(32px);
+    }
+    
+    &__graphic {
+        padding: 4px;
+        border: $mdc-theme-on-primary dotted 1px; 
+        border-radius: $card-corner-radius;
+
+        svg path:nth-child(2) {
+            fill: $mdc-theme-on-primary;
+        }
+    }
+}
+
+.mdc-fab {
+    @include mdc-fab-container-color(transparent);
+    @include mdc-fab-ink-color($mdc-theme-on-secondary);
+    border: $mdc-theme-on-primary solid 1px;
+}
+
+.app-fab--absolute {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 2rem;
+}
 
 .project-item {
     display: grid;
@@ -178,7 +167,57 @@ html {
     }
 }
 
-@media(min-width: $width) {
+.profile {
+    max-height: 120px;
+    opacity: 0;
+}
+    
+.wrapper {
+    display: block;
+    margin: auto;
+    position: relative;
+    padding-top: 100%;
+    max-height: 120px;
+    max-width: 120px;
+
+    img {
+        border: 1px solid rgb(0, 33, 113);
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+@media(min-width: $grid-min-width) {
+    .profile {
+        padding: 0.5rem 0;
+        max-height: 150px;
+    }
+
+    .wrapper {
+        max-height: 150px;
+        max-width: 150px;
+    }
+
+    .app-fab--absolute {
+        bottom: 1.5rem;
+        right: 3rem;
+    }
+
+    .mdc-chip {
+        margin: 0px 2px;
+    }
+}
+
+@media(min-width: $grid-max-width) {
+    .profile {
+        padding: 1rem 0;
+    }
+
     .app-fab--absolute {
         bottom: 1.5rem;
         right: 3rem;

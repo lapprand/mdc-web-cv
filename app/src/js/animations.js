@@ -38,18 +38,26 @@ const fadeInContentTimeline = anime.timeline();
 function fadeInContent() {
   fadeInContentTimeline
     .add({
+      targets: '.profile',
+      easing: [0.0, 0.0, 0.2, 1],
+      duration: 200,
+      translateX: ['80px', '0'],
+      opacity: [0, 1]
+    })
+    .add({
       targets: '.chips .mdc-chip',
       easing: [0.0, 0.0, 0.2, 1],
-      duration: 150,
+      duration: 200,
       delay: (el, i, l) => { return i * 50; },
       opacity: [0, 1]
     })
     .add({
       targets: '.content .mdc-card',
       easing: [0.0, 0.0, 0.2, 1],
-      duration: 150,
-      delay: (el, i, l) => { return i * 50; },
+      duration: 250,
+      delay: (el, i, l) => { return i * 150; },
       opacity: [0, 1],
+      translateY: ['80px', '0'],
       autoplay: false,
       complete: _ => { require('./scroll'); }
     });
