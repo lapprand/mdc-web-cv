@@ -1,15 +1,15 @@
 const path = require('path');
-const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   target: 'web',
   mode: 'production',
+  context: path.resolve(__dirname, 'app'),
   entry: [
     path.join(__dirname, 'app', 'index.js'),
-    path.join(__dirname, 'app', 'index.html'),
     path.join(__dirname, 'app', 'index.scss')
   ],
   output: {
@@ -24,7 +24,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]'
+              name: '[path][name].[ext]'
             }
           }
         ]
@@ -68,13 +68,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'bundle.css',
-            },
-          },
-          { loader: 'extract-loader' },
+          { loader: MiniCssExtractPlugin.loader },
           { loader: 'css-loader' },
           {
             loader: 'postcss-loader',
@@ -85,7 +79,9 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              includePaths: [path.resolve(__dirname, 'node_modules')]
+              includePaths: [
+                path.resolve(__dirname, 'node_modules')
+              ]
             }
           }
         ]
@@ -108,9 +104,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'app', 'index.html')
     }),
+    new MiniCssExtractPlugin({
+      filename: "bundle.css",
+      chunkFilename: "[id].css"
+    }),
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')])
   ],
-  devtool: 'source-map',
   devServer: {
     host: "0.0.0.0",
     port: 8080,
