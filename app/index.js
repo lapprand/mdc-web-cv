@@ -1,5 +1,8 @@
-// require('./src/js/modernizr-custom');
-require('./src/js/favicon');
+var req = require.context("./src/media");
+req.keys().forEach(req);
+
+req = require.context("./favicon");
+req.keys().forEach(req);
 
 window.onload = _ => {
     require('./src/js/animations');
