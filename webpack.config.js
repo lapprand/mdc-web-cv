@@ -1,6 +1,7 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -8,13 +9,13 @@ module.exports = {
   target: 'web',
   mode: 'production',
   context: path.resolve(__dirname, 'app'),
-  entry: [
-    path.join(__dirname, 'app', 'index.js'),
-    path.join(__dirname, 'app', 'index.scss')
-  ],
+  entry: {
+    index: [path.join(__dirname, 'app', 'index.js'), path.join(__dirname, 'app', 'index.scss')],
+    modernizr: path.join(__dirname, 'app', 'src', 'js', 'modernizr-custom.js'),
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -104,6 +105,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'app', 'index.html')
     }),
+    new ScriptExtHtmlWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "bundle.css",
       chunkFilename: "[id].css"
