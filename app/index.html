@@ -50,7 +50,11 @@
             </div>
             <div class="profile mdc-layout-grid__cell--span-12">
                 <div class="wrapper">
-                    <img markup-inline src="./src/media/profile.png" />
+                    <picture>
+                        <source type="image/webp" srcset="./src/media/profile.webp">
+                        <source type="image/png" srcset="./src/media/profile.png">
+                        <img src="./src/media/profile.png" />
+                    </picture>
                 </div>
             </div>
             <div class="mdc-layout-grid__cell--span-12 mdc-chip-set chips">${require('./src/html/_chips.html')}</div>
@@ -66,5 +70,7 @@
     </div>
 
 </body>
+
+<script defer src="./src/js/modernizr-custom.js"></script>
 
 </html>

@@ -19,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ico|png|jpg|gif|xml|svg|webmanifest)$/,
+        test: /\.(ico|png|webp|jpg|gif|xml|svg|webmanifest)$/,
         use: [
           {
             loader: 'file-loader',

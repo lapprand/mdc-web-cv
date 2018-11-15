@@ -20,8 +20,14 @@ html {
     scroll-behavior: smooth;
     white-space: normal;
     overflow: visible;
+}
 
+.no-webp {
     background-image: url("src/media/bg.png");
+}
+
+.webp {
+    background-image: url("src/media/bg.webp");
 }
 
 .mdc-layout-grid {

@@ -1,3 +1,4 @@
+// require('./src/js/modernizr-custom');
 require('./src/js/favicon');
 
 window.onload = _ => {
