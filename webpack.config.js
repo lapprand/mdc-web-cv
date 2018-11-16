@@ -1,9 +1,11 @@
-const path = require('path');
-const autoprefixer = require('autoprefixer');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const path = require('path');
 
 module.exports = {
   target: 'web',
@@ -11,29 +13,36 @@ module.exports = {
   context: path.resolve(__dirname, 'app'),
   entry: {
     index: [path.join(__dirname, 'app', 'index.js'), path.join(__dirname, 'app', 'index.scss')],
-    modernizr: path.join(__dirname, 'app', 'src', 'js', 'modernizr-custom.js'),
+    modernizr: path.join(__dirname, 'app', 'src', 'js', 'modernizr.js'),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
   },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(ico|png|webp|jpg|gif|xml|svg|webmanifest)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]'
-            }
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]'
           }
-        ]
+        }]
       },
       {
         test: /\.(html)$/,
-        use: [
-          {
+        use: [{
             loader: 'html-loader',
             options: {
               interpolate: true,
@@ -44,8 +53,7 @@ module.exports = {
             loader: 'markup-inline-loader',
             options: {
               svgo: {
-                plugins: [
-                  {
+                plugins: [{
                     mergePaths: false
                   },
                   {
@@ -68,9 +76,12 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          { loader: MiniCssExtractPlugin.loader },
-          { loader: 'css-loader' },
+        use: [{
+            loader: MiniCssExtractPlugin.loader
+          },
+          {
+            loader: 'css-loader'
+          },
           {
             loader: 'postcss-loader',
             options: {
@@ -103,9 +114,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'app', 'index.html')
+      template: path.join(__dirname, 'app', 'index.html'),
+      minify: true
     }),
-    new ScriptExtHtmlWebpackPlugin(),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'async'
+    }),
     new MiniCssExtractPlugin({
       filename: "bundle.css",
       chunkFilename: "[id].css"

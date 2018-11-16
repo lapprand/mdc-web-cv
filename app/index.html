@@ -41,26 +41,22 @@
         </div>
     </div>
 
-    <div id="content" class="mdc-layout-grid">
-        <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell--span-12">
-                <div class="header hover-gradient">
-                    <img markup-inline src="./src/media/lapp.svg" />
-                </div>
+    <div class="grid">
+        <div class="header hover-gradient">
+            <img markup-inline src="./src/media/lapp.svg" />
+        </div>
+        <div class="profile">
+            <div class="wrapper">
+                <picture>
+                    <source type="image/webp" srcset="./src/media/profile.webp">
+                    <source type="image/png" srcset="./src/media/profile.png">
+                    <img src="./src/media/profile.png" />
+                </picture>
             </div>
-            <div class="profile mdc-layout-grid__cell--span-12">
-                <div class="wrapper">
-                    <picture>
-                        <source type="image/webp" srcset="./src/media/profile.webp">
-                        <source type="image/png" srcset="./src/media/profile.png">
-                        <img src="./src/media/profile.png" />
-                    </picture>
-                </div>
-            </div>
-            <div class="mdc-layout-grid__cell--span-12 mdc-chip-set chips">${require('./src/html/_chips.html')}</div>
-            <div class="mdc-layout-grid__cell--span-12 content">
-                ${require('./src/html/_content.html')}
-            </div>
+        </div>
+        <div class="mdc-chip-set chips">${require('./src/html/_chips.html')}</div>
+        <div class="content">
+            ${require('./src/html/_content.html')}
         </div>
         <button class="mdc-fab mdc-fab--mini mdc-fab--exited app-fab--absolute" aria-label="Scroll down">
             <div class="mdc-fab__icon">
@@ -70,7 +66,5 @@
     </div>
 
 </body>
-
-<script defer src="./src/js/modernizr-custom.js"></script>
 
 </html>

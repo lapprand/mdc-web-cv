@@ -10,23 +10,15 @@ $mdc-theme-on-surface: #442C2E;
 $mdc-theme-background: #FFFFFF;
 $mdc-theme-on-background: #002171;
 
-$mdc-layout-grid-default-gutter: (
-  desktop: 16px,
-  tablet: 8px,
-  phone: 8px
-);
-
 // Material Design Components
-@import "@material/linear-progress/mdc-linear-progress";
-@import "@material/layout-grid/mdc-layout-grid";
-@import "@material/typography/mdc-typography";
-@import "@material/animation/functions";
-@import "@material/chips/mdc-chips";
-@import "@material/shape/functions";
-@import "@material/shape/mixins";
-@import "@material/shape/mixins";
-@import "@material/fab/mdc-fab";
+@import "~@material/linear-progress/mdc-linear-progress";
+@import "~@material/typography/mdc-typography";
+@import "~@material/animation/variables";
+@import "~@material/chips/mdc-chips";
+@import "~@material/fab/mdc-fab";
 
+@import "src/scss/breakpoints";
 @import "src/scss/base";
+@import "src/scss/profile";
+@import "src/scss/grid";
 @import "src/scss/animations";
-

@@ -1,4 +1,4 @@
-import anime from 'animejs';
+const anime = require("./anime.min.js")
 
 let header = document.querySelector(".header");
 

@@ -1,0 +1,41 @@
+$img-size: 120px;
+
+.profile {
+    max-height: $img-size;
+    padding: 1rem 0;
+    opacity: 0;
+}
+
+.wrapper {
+    display: block;
+    margin: auto;
+    position: relative;
+    padding-top: $img-size;
+    max-height: $img-size;
+    max-width: $img-size;
+
+    img {
+        border: 1px solid $mdc-theme-primary;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+@include respond-to('small') {
+    $img-size: 150px;
+
+    .profile {
+        max-height: $img-size;
+    }
+
+    .wrapper {
+        padding-top: $img-size;
+        max-height: $img-size;
+        max-width: $img-size;
+    }
+}

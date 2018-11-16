@@ -1,19 +1,10 @@
 $card-corner-radius: 4px;
-$grid-max-width: 700px;
-$grid-min-width: 300px;
-$img-size: 120px;
 
 #loader {
     position: absolute;
     z-index: 1;
     width: 100vw;
     height: auto;
-}
-
-#content {
-    display: none;
-    margin: auto;
-    padding: 1rem 1rem 5rem 1rem;
 }
 
 html {
@@ -30,22 +21,15 @@ html {
     background-image: url("src/media/bg.webp");
 }
 
-.mdc-layout-grid {
-    max-width: $grid-max-width;
-    min-width: $grid-min-width;
-}
-
 .header {
-    @include mdc-shape-radius($mdc-shape-large-component-radius, false);
     transform: translateY(40vh);
-    border: 1px solid transparent;
     padding: 1rem;
-    
+
     .lines {
         height: 10vh;
         max-height: 50px;
     }
-    
+
     &--animating {
         animation-name: slide-up;
         animation-duration: 500ms;
@@ -56,7 +40,8 @@ html {
     }
 }
 
-a, a:hover {
+a,
+a:hover {
     text-decoration: none;
 }
 
@@ -64,10 +49,10 @@ a, a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
+
     .mdc-chip {
-        @include mdc-shape-radius(mdc-shape-resolve-percentage-radius(32px, $mdc-shape-small-component-radius));
         border: 1px solid $mdc-theme-primary;
+        border-radius: 25px;
         background-color: transparent;
         margin: 2px 2px;
         opacity: 0;
@@ -107,14 +92,14 @@ hr {
         white-space: normal;
         overflow-wrap: break-word;
         word-wrap: break-word;
-    
+
         word-break: break-all;
         word-break: break-word;
     }
 
     &__icon {
-        @include mdc-shape-radius(mdc-shape-resolve-percentage-radius(24px, $mdc-shape-small-component-radius));
-        border: $mdc-theme-on-primary dotted 1px; 
+        border: $mdc-theme-on-primary dotted 1px;
+        border-radius: 4px;
         align-self: center;
         margin-right: 16px;
         padding: 4px;
@@ -122,25 +107,6 @@ hr {
         svg path:nth-child(2) {
             fill: $mdc-theme-on-primary;
         }
-    }
-}
-.mdc-list-item {
-    height: auto;
-
-    &__text {
-        white-space: normal;
-    }
-    
-    &__secondary-text {
-        @include mdc-typography-baseline-top(32px);
-    }
-    
-    &__graphic {
-        padding: 4px;
-        
-        border-radius: $card-corner-radius;
-
-        
     }
 }
 
@@ -195,56 +161,13 @@ hr {
     }
 }
 
-.profile {
-    max-height: $img-size;
-    opacity: 0;
-}
-    
-.wrapper {
-    z-index: -1;
-    display: block;
-    margin: auto;
-    position: relative;
-    padding-top: $img-size;
-    max-height: $img-size;
-    max-width: $img-size;
-
-    img {
-        border: 1px solid $mdc-theme-primary;
-        border-radius: 50%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: auto;
-    }
-}
-
-
-@media(min-width: $grid-min-width) {
-    $img-size: 150px;
-
-    .profile {
-        padding: 0.5rem 0;
-        max-height: $img-size;
-    }
-
-    .wrapper {
-        padding-top: $img-size;
-        max-height: $img-size;
-        max-width: $img-size;
-    }
-
+@include respond-to('small') {
     .mdc-chip {
         margin: 0px 2px;
     }
 }
 
-@media(min-width: $grid-max-width) {
-    .profile {
-        padding: 1rem 0;
-    }
-
+@include respond-to('medium') {
     .mdc-chip {
         margin: 0px 2px;
     }
