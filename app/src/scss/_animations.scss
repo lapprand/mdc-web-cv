@@ -36,10 +36,18 @@
 
 .mdc-chip {
     @extend %hover-gradient;
-    background-image: linear-gradient(to top left, #fc921a, #f7b733);
+    background-image: linear-gradient(to top left, #ffba53, #ffce65);
     transition: background-size 200ms $mdc-animation-acceleration-curve-timing-function;
 
     &:hover {
         transition: background-size 250ms $mdc-animation-deceleration-curve-timing-function;
+    }
+
+    &.github {
+        background-image: linear-gradient(to top left, #fafafa, #ffffff);
+    }
+
+    &.linkedin {
+        background-image: linear-gradient(to top left, #71c6ff, #a4e5ff);
     }
 }

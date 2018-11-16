@@ -126,41 +126,6 @@ hr {
     margin-left: -100px;
 }
 
-.project-item {
-    display: grid;
-    grid-template-rows: auto;
-    grid-gap: 0px 0px;
-
-    &-top {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        // margin: 20px 0 0 0;
-    }
-
-    &-img {
-        justify-self: center;
-        align-self: center;
-        height: 48px;
-        width: 48px;
-        margin-right: 24px;
-    }
-
-    &-text {
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
-
-        white-space: normal;
-        overflow-wrap: break-word;
-        word-wrap: break-word;
-
-        word-break: break-all;
-        word-break: break-word;
-    }
-}
-
 @include respond-to('small') {
     .mdc-chip {
         margin: 0px 2px;

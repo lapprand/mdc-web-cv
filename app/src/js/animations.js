@@ -48,7 +48,9 @@ function fadeInContent() {
       targets: '.chips .mdc-chip',
       easing: [0.0, 0.0, 0.2, 1],
       duration: 200,
-      delay: (el, i, l) => { return i * 100; },
+      delay: (el, i, l) => {
+        return i * 100;
+      },
       opacity: [0, 1],
       translateY: ['-80px', '0'],
     })
@@ -56,11 +58,15 @@ function fadeInContent() {
       targets: '.section',
       easing: [0.0, 0.0, 0.2, 1],
       duration: 250,
-      delay: (el, i, l) => { return i * 150; },
+      delay: (el, i, l) => {
+        return i * 150;
+      },
       opacity: [0, 1],
       translateY: ['80px', '0'],
       autoplay: false,
-      complete: _ => { require('./scroll'); }
+      complete: _ => {
+        require('./scroll');
+      }
     });
 }
 
