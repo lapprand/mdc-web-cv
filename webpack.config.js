@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {GenerateSW} = require('workbox-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 
@@ -13,7 +14,8 @@ module.exports = {
   context: path.resolve(__dirname, 'app'),
   entry: {
     index: [path.join(__dirname, 'app', 'index.js'), path.join(__dirname, 'app', 'index.scss')],
-    modernizr: path.join(__dirname, 'app', 'src', 'js', 'modernizr.js'),
+    // sw: path.join(__dirname, 'app', 'src', 'js', 'sw.js'),
+    modernizr: path.join(__dirname, 'app', 'src', 'js', 'modernizr.js')
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -124,6 +126,7 @@ module.exports = {
       filename: "bundle.css",
       chunkFilename: "[id].css"
     }),
+    new GenerateSW(),
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')])
   ],
   devServer: {
