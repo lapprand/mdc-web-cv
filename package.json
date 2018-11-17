@@ -45,7 +45,6 @@
     "@material/layout-grid": "^0.41.0",
     "@material/linear-progress": "^0.41.0",
     "@material/ripple": "^0.41.0",
-    "@material/typography": "^0.41.0",
-    "normalize.css": "^8.0.1"
+    "@material/typography": "^0.41.0"
   }
 }
