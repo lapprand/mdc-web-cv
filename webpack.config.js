@@ -16,7 +16,7 @@ module.exports = {
   context: path.resolve(__dirname, 'app'),
   entry: {
     index: [path.join(__dirname, 'app', 'index.js'), path.join(__dirname, 'app', 'index.scss')],
-    // sw: path.join(__dirname, 'app', 'src', 'js', 'sw.js'),
+    roboto: path.join(__dirname, 'app', 'src/scss/fonts', 'roboto.scss'),
     modernizr: path.join(__dirname, 'app', 'src', 'js', 'modernizr.js')
   },
   output: {
@@ -36,7 +36,7 @@ module.exports = {
   },
   module: {
     rules: [{
-        test: /\.(ico|png|webp|jpg|gif|xml|svg|webmanifest)$/,
+        test: /\.(ico|png|webp|jpg|gif|xml|svg|webmanifest|ttf|woff|woff2|txt|pb)$/,
         use: [{
           loader: 'file-loader',
           options: {
@@ -125,7 +125,7 @@ module.exports = {
       defaultAttribute: 'async'
     }),
     new MiniCssExtractPlugin({
-      filename: "bundle.css",
+      filename: "[name].css",
       chunkFilename: "[id].css"
     }),
     new GenerateSW(),

@@ -36,7 +36,7 @@
 
 .mdc-chip {
     @extend %hover-gradient;
-    background-image: linear-gradient(to top left, #ffba53, #ffce65);
+    background-image: linear-gradient(to top left, #ffae52, #ffc165);
     transition: background-size 200ms $mdc-animation-acceleration-curve-timing-function;
 
     &:hover {
