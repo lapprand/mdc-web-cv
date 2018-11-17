@@ -1,4 +1,5 @@
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
@@ -35,7 +36,7 @@ module.exports = {
   },
   module: {
     rules: [{
-        test: /\.(ico|png|webp|jpg|gif|xml|svg|ttf|woff|woff2|txt|pb)$/,
+        test: /\.(ico|png|webp|jpg|gif|xml|svg|webmanifest|ttf|woff|woff2|txt|pb)$/,
         use: [{
           loader: 'file-loader',
           options: {
@@ -119,6 +120,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'app', 'index.html'),
       minify: true
+    }),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'async'
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
