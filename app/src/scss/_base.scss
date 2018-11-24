@@ -81,6 +81,10 @@ hr {
     clear: both;
     border: none;
     border-top: 1px solid $mdc-theme-primary;
+
+    &.in-section {
+        border-top: 1px dashed $mdc-theme-secondary;
+    }
 }
 
 .section-header {
@@ -102,7 +106,13 @@ hr {
         border-radius: 4px;
         align-self: center;
         margin-right: 16px;
-        padding: 4px;
+        height: 32px;
+        width: 32px;
+        
+        svg {
+            padding: 4px;
+            align-self: center;
+        }
 
         svg path:nth-child(2) {
             fill: $mdc-theme-on-primary;

@@ -72,20 +72,18 @@ function fadeInContent() {
 
 // Set gradient expand position on hover
 const calcPos = (e) => {
-  const posX = e.offsetX / e.target.offsetWidth * 100;
-  const posY = e.offsetY / e.target.offsetHeight * 100;
-  return `${posX}% ${posY}%`;
+  return `${e.offsetX / e.target.offsetWidth * 100}% ${e.offsetY / e.target.offsetHeight * 100}%`;
 }
 
 function onMouseEnter(e) {
   e.target.style.backgroundPosition = calcPos(e);
   e.target.style.backgroundSize = "100% 100%";
-};
+}
 
 function onMouseLeave(e) {
   e.target.style.backgroundPosition = calcPos(e);
   e.target.style.backgroundSize = "0% 0%";
-};
+}
 
 const hoverEls = document.querySelectorAll('.hover-gradient');
 
