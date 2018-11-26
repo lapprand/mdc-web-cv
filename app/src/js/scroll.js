@@ -1,10 +1,5 @@
-import { MDCRipple } from '@material/ripple';
-
-
 var scrollIndicator = document.querySelector('.mdc-fab');
 var scrollHeight = document.documentElement.scrollHeight;
-
-const fabRipple = new MDCRipple(scrollIndicator);
 
 scrollIndicator.addEventListener('click', function () {
     window.scrollTo(0, scrollHeight);

@@ -9,8 +9,15 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+// Scroll to top
+window.onbeforeunload = _ => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
 window.onload = _ => {
-    require('./src/js/animations');
     document.querySelector("#loader").style.display = "none";
     document.querySelector(".grid").style.display = "grid";
+    console.log(`${document.body.scrollTop} ${document.documentElement.scrollTop}`)
+    require('./src/js/animations');
 };

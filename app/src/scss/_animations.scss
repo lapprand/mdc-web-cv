@@ -24,16 +24,6 @@
     }
 }
 
-.section {
-    @extend %hover-gradient;
-    background-image: linear-gradient(to bottom, #00f7ff, #0077ff);
-    transition: background-size 250ms $mdc-animation-acceleration-curve-timing-function;
-
-    &:hover {
-        transition: background-size 300ms $mdc-animation-deceleration-curve-timing-function;
-    }
-}
-
 .mdc-chip {
     @extend %hover-gradient;
     background-image: linear-gradient(to top left, #ffb546, #ff961e);
