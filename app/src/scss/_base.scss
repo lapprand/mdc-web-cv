@@ -68,7 +68,7 @@ a:hover {
     opacity: 0;
 }
 
-hr {
+hr.head-sep {
     display: block;
     position: relative;
     padding: 0;
@@ -81,10 +81,6 @@ hr {
     clear: both;
     border: none;
     border-top: 1px solid $mdc-theme-primary;
-
-    &.in-section {
-        border-top: 1px dashed $mdc-theme-secondary;
-    }
 }
 
 .section-header {
@@ -108,7 +104,7 @@ hr {
         margin-right: 16px;
         height: 32px;
         width: 32px;
-        
+
         svg {
             padding: 4px;
             align-self: center;

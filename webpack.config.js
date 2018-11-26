@@ -128,7 +128,10 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css"
     }),
-    new GenerateSW(),
+    new GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true
+    }),
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')])
   ],
   devServer: {
