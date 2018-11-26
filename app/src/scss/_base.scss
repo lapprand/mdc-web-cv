@@ -119,17 +119,21 @@ hr.head-sep {
 .mdc-fab {
     @include mdc-fab-container-color(transparent);
     @include mdc-fab-ink-color($mdc-theme-on-secondary);
-    @include mdc-fab-extended-fluid;
     border: $mdc-theme-on-primary solid 1px;
     opacity: 0.35;
 }
 
 .app-fab--absolute {
     position: fixed;
-    bottom: 16px;
-    left: 50%;
-    width: 200px;
-    margin-left: -100px;
+    bottom: 1rem;
+    right: 1rem;
+    
+    @include respond-to('large') {
+        .app-fab--absolute {
+            bottom: 1.5rem;
+            right: 1.5rem;
+        }
+    }
 }
 
 @include respond-to('small') {
