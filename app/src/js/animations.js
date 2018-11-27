@@ -2,6 +2,14 @@ const anime = require("./anime.min.js")
 
 let header = document.querySelector(".header");
 
+setTimeout(_ => {
+  window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'auto'
+  });
+}, 0.0001);
+
 // Line animation
 anime({
   targets: '.lines path',
@@ -20,7 +28,6 @@ anime({
   },
   loop: false,
   autoplay: true,
-  // complete: _ => { slideUp.play(); }
   complete: _ => {
     header.addEventListener("animationend", (e) => {
       if (e.animationName === 'slide-up') {

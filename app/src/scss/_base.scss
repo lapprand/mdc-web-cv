@@ -8,10 +8,11 @@ $card-corner-radius: 4px;
 }
 
 html {
-    scroll-behavior: smooth;
     white-space: normal;
-    overflow: visible;
+    height: 100%;
+    overflow:auto;
 }
+body { height: 100%; }
 
 .no-webp {
     background-image: url("src/media/bg.png");

@@ -9,12 +9,6 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-// Scroll to top
-// window.onbeforeunload = _ => {
-//     document.body.scrollTop = 0;
-//     document.documentElement.scrollTop = 0;
-// }
-
 window.onload = _ => {
     document.querySelector("#loader").style.display = "none";
     document.querySelector(".grid").style.display = "grid";

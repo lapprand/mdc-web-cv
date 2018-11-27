@@ -2,7 +2,11 @@ var scrollIndicator = document.querySelector('.mdc-fab');
 var scrollHeight = document.documentElement.scrollHeight;
 
 scrollIndicator.addEventListener('click', function () {
-    window.scrollTo(0, scrollHeight);
+    window.scrollTo({
+        top: scrollHeight,
+        left: 0,
+        behavior: 'smooth'
+    });
 });
 
 function checkScroll() {

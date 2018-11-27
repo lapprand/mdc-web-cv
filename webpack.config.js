@@ -119,14 +119,16 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'app', 'index.html'),
-      minify: true
-    }),
-    new ScriptExtHtmlWebpackPlugin({
-      defaultAttribute: 'async'
+      minify: true,
+      inject: true
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
+    }),
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'async',
+      preload: /\.js$/
     }),
     new GenerateSW({
       clientsClaim: true,
