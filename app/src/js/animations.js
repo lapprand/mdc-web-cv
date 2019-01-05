@@ -17,12 +17,12 @@ anime({
     anime.setDashoffset, 0,
   ],
   stroke: ['#00b0ff', '#00b0ff', '#00b0ff', 'rgb(0, 33, 113)'],
-  fill: ['#00b0ff', '#00b0ff', '#00b0ff', 'rgb(0, 33, 113)'],
+  fill: ['#00b0ff', '#fff', '#00b0ff', 'rgb(0, 33, 113)'],
   fillOpacity: [
     0, 1
   ],
-  easing: [0, 0, 0.2, 1],
-  duration: 300,
+  easing: [0, 0.2, 0.6, 1],
+  duration: 500,
   delay(el, i) {
     return i * 30;
   },
@@ -56,7 +56,7 @@ function fadeInContent() {
       easing: [0.0, 0.0, 0.2, 1],
       duration: 200,
       delay: (el, i, l) => {
-        return i * 100;
+        return i * 225;
       },
       opacity: [0, 1],
       translateY: ['-80px', '0'],
@@ -64,9 +64,9 @@ function fadeInContent() {
     .add({
       targets: '.section',
       easing: [0.0, 0.0, 0.2, 1],
-      duration: 250,
+      duration: 350,
       delay: (el, i, l) => {
-        return i * 150;
+        return i * 375;
       },
       opacity: [0, 1],
       translateY: ['80px', '0'],
