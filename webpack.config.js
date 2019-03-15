@@ -134,7 +134,7 @@ module.exports = {
       clientsClaim: true,
       skipWaiting: true
     }),
-    new CleanWebpackPlugin([path.resolve(__dirname, 'dist')])
+    new CleanWebpackPlugin()
   ],
   devServer: {
     host: "0.0.0.0",

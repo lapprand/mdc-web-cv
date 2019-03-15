@@ -54,9 +54,9 @@ function fadeInContent() {
     .add({
       targets: '.chips .mdc-chip',
       easing: [0.0, 0.0, 0.2, 1],
-      duration: 200,
+      duration: 100,
       delay: (el, i, l) => {
-        return i * 225;
+        return i * 125;
       },
       opacity: [0, 1],
       translateY: ['-80px', '0'],
@@ -64,9 +64,9 @@ function fadeInContent() {
     .add({
       targets: '.section',
       easing: [0.0, 0.0, 0.2, 1],
-      duration: 350,
+      duration: 150,
       delay: (el, i, l) => {
-        return i * 375;
+        return i * 125;
       },
       opacity: [0, 1],
       translateY: ['80px', '0'],
