@@ -17,6 +17,7 @@ scrollUpIndicator.addEventListener('click', function () {
         behavior: 'smooth'
     });
 });
+scrollUpIndicator.style.bottom = '4rem'
 
 function checkScroll() {
     var scrollHeight = document.body.scrollHeight || document.documentElement.scrollHeight;
@@ -33,7 +34,6 @@ function checkScroll() {
     // decide wheter to show scroll up button
     if (scrollTop > 100) {
         scrollUpIndicator.classList.remove('mdc-fab--exited')
-        scrollUpIndicator.style.bottom = '4rem'
     } else {
         scrollUpIndicator.classList.add('mdc-fab--exited')
     }
