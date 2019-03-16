@@ -4,32 +4,29 @@ let header = document.querySelector(".header");
 
 setTimeout(_ => {
   window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'auto'
+    top: 0,
+    left: 0,
+    behavior: 'auto'
   });
 }, 0.0001);
 
 // Line animation
 anime({
   targets: '.lines path',
-  strokeDashoffset: [
-    anime.setDashoffset, 0,
-  ],
-  stroke: ['#00b0ff', '#00b0ff', '#00b0ff', 'rgb(0, 33, 113)'],
-  fill: ['#00b0ff', '#fff', '#00b0ff', 'rgb(0, 33, 113)'],
+  strokeDashoffset: [anime.setDashoffset, 0],
+  stroke: ['#ff5252', '#00b0ff', '#00b0ff', '#212121'],
+  fill: ['#ff5252', '#ff5252', '#ff5252', '#448aff'],
   fillOpacity: [
     0, 1
   ],
-  easing: [0, 0.2, 0.6, 1],
+  easing: 'easeInOutSine',
   duration: 500,
-  delay(el, i) {
-    return i * 30;
+  delay: function (el, i) {
+    return i * 50
   },
-  loop: false,
   autoplay: true,
-  complete: _ => {
-    header.addEventListener("animationend", (e) => {
+  complete: function () {
+    header.addEventListener("animationend", function (e) {
       if (e.animationName === 'slide-up') {
         fadeInContent();
       }
@@ -46,15 +43,15 @@ function fadeInContent() {
   fadeInContentTimeline
     .add({
       targets: '.profile',
-      easing: [0.0, 0.0, 0.2, 1],
-      duration: 200,
       translateX: ['80px', '0'],
+      easing: 'easeOutBack',
+      duration: 200,
       opacity: [0, 1]
     })
     .add({
       targets: '.chips .mdc-chip',
-      easing: [0.0, 0.0, 0.2, 1],
       duration: 100,
+      easing: 'easeOutBack',
       delay: (el, i, l) => {
         return i * 125;
       },
@@ -63,8 +60,8 @@ function fadeInContent() {
     })
     .add({
       targets: '.section',
-      easing: [0.0, 0.0, 0.2, 1],
       duration: 150,
+      easing: 'easeOutBack',
       delay: (el, i, l) => {
         return i * 125;
       },
