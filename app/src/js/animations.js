@@ -43,30 +43,32 @@ function fadeInContent() {
   fadeInContentTimeline
     .add({
       targets: '.profile',
-      translateX: ['80px', '0'],
-      easing: 'easeOutBack',
+      // translateX: ['80px', '0'],
+      easing: 'easeOutSine',
       duration: 200,
       opacity: [0, 1]
     })
     .add({
       targets: '.chips .mdc-chip',
-      duration: 100,
-      easing: 'easeOutBack',
+      duration: 250,
+      easing: 'easeOutSine',
       delay: (el, i, l) => {
         return i * 125;
       },
       opacity: [0, 1],
-      translateY: ['-80px', '0'],
+      scale: [0, 1]
+      // translateY: ['-80px', '0'],
     })
     .add({
       targets: '.section',
-      duration: 150,
-      easing: 'easeOutBack',
+      duration: 300,
+      easing: 'easeOutSine',
       delay: (el, i, l) => {
         return i * 125;
       },
       opacity: [0, 1],
-      translateY: ['80px', '0'],
+      scale: [0, 1],
+      // translateY: ['80px', '0'],
       autoplay: false,
       complete: _ => {
         require('./scroll');

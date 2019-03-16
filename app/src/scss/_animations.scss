@@ -14,15 +14,15 @@
     will-change: background-size;
 }
 
-.header {
-    @extend %hover-gradient;
-    background-image: linear-gradient(to top, #21da9c, #38ef7d);
-    transition: background-size 250ms $mdc-animation-acceleration-curve-timing-function;
+// .header {
+//     @extend %hover-gradient;
+//     background-image: linear-gradient(to top, #21da9c, #38ef7d);
+//     transition: background-size 250ms $mdc-animation-acceleration-curve-timing-function;
 
-    &:hover {
-        transition: background-size 300ms $mdc-animation-deceleration-curve-timing-function;
-    }
-}
+//     &:hover {
+//         transition: background-size 300ms $mdc-animation-deceleration-curve-timing-function;
+//     }
+// }
 
 .mdc-chip {
     @extend %hover-gradient;
