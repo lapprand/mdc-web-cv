@@ -128,13 +128,6 @@ hr.head-sep {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
-    
-    @include respond-to('large') {
-        .app-fab--absolute {
-            bottom: 1.5rem;
-            right: 1.5rem;
-        }
-    }
 }
 
 @include respond-to('small') {
