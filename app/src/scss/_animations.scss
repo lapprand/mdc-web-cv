@@ -24,25 +24,36 @@
 //     }
 // }
 
-.mdc-chip {
+.mdc-button {
     @extend %hover-gradient;
-    background-image: linear-gradient(to bottom left, #ff9e80, #ffd180);
     transition: background-size 200ms $mdc-animation-acceleration-curve-timing-function;
 
     &:hover {
         transition: background-size 250ms $mdc-animation-deceleration-curve-timing-function;
     }
 
+    &.email {
+        background-image: linear-gradient(to bottom left, #ffaf80, #ffd180);
+        
+        &:hover {
+            color: #a34f00;
+
+            svg path:nth-child(2) {
+                fill: #a34f00;
+            }
+        }
+    }
+
     &.github {
         background-image: linear-gradient(to bottom left, #b9f6ca, #ccff90);
 
-        // &:hover {
-        //     color: #fafafa;
+        &:hover {
+            color: #1a8322;
 
-        //     svg path:nth-child(2) {
-        //         fill: #fafafa;
-        //     }
-        // }
+            svg path:nth-child(2) {
+                fill: #1a8322;
+            }
+        }
     }
 
     &.linkedin {

@@ -21,9 +21,7 @@ anime({
   ],
   easing: 'easeInOutSine',
   duration: 500,
-  delay: function (el, i) {
-    return i * 50
-  },
+  delay: anime.stagger(50),
   autoplay: true,
   complete: function () {
     header.addEventListener("animationend", function (e) {
@@ -49,12 +47,10 @@ function fadeInContent() {
       opacity: [0, 1]
     })
     .add({
-      targets: '.chips .mdc-chip',
+      targets: '.btns .mdc-button',
       duration: 250,
       easing: 'easeOutSine',
-      delay: (el, i, l) => {
-        return i * 125;
-      },
+      delay: anime.stagger(100),
       opacity: [0, 1],
       scale: [0, 1]
       // translateY: ['-80px', '0'],
@@ -63,9 +59,7 @@ function fadeInContent() {
       targets: '.section',
       duration: 300,
       easing: 'easeOutSine',
-      delay: (el, i, l) => {
-        return i * 125;
-      },
+      delay: anime.stagger(100),
       opacity: [0, 1],
       scale: [0, 1],
       // translateY: ['80px', '0'],

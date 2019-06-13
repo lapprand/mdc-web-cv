@@ -39,12 +39,12 @@
   },
   "dependencies": {
     "@material/animation": "^1.0.0",
-    "@material/button": "^1.0.1",
-    "@material/chips": "^1.0.1",
-    "@material/fab": "^1.0.1",
+    "@material/button": "^2.3.0",
+    "@material/chips": "^2.3.0",
+    "@material/fab": "^2.3.0",
     "@material/layout-grid": "^0.41.0",
-    "@material/linear-progress": "^1.0.0",
-    "@material/ripple": "^1.0.1",
-    "@material/typography": "^1.0.0"
+    "@material/linear-progress": "^2.3.0",
+    "@material/ripple": "^2.3.0",
+    "@material/typography": "^2.3.0"
   }
 }

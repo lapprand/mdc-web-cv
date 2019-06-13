@@ -46,16 +46,16 @@ a:hover {
     text-decoration: none;
 }
 
-.chips {
+.btns {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
-    .mdc-chip {
-        border: 1px solid $mdc-theme-primary;
-        border-radius: 25px;
-        background-color: transparent;
-        margin: 2px 2px;
+    .mdc-button {
+        // border: 1px solid $mdc-theme-primary;
+        // border-radius: 25px;
+        // background-color: transparent;
+        // margin: 2px 2px;
         opacity: 0;
 
         path {
@@ -131,13 +131,13 @@ hr.head-sep {
 }
 
 @include respond-to('small') {
-    .mdc-chip {
+    .mdc-button {
         margin: 0px 2px;
     }
 }
 
 @include respond-to('medium') {
-    .mdc-chip {
+    .mdc-button {
         margin: 0px 2px;
     }
 }
