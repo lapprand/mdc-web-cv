@@ -1,6 +1,11 @@
 name = "mdc-web-cv"
 compatibility_date = "2026-10-03"
 
+# No duplicate URL: the site is reachable only at v1.lapprand.com. This must be
+# set here rather than toggled in the dashboard — `wrangler deploy` re-enables
+# <worker>.workers.dev on every deploy otherwise.
+workers_dev = false
+
 # The 2019 build cannot run on a modern toolchain (see README.md), so the built
 # site is committed in ./dist and deployed as-is.
 [assets]
