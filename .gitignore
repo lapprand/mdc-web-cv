@@ -1,5 +1,8 @@
 # Production files
-dist/
+# NOTE: dist/ is deliberately NOT ignored. The 2019 build can no longer run
+# (node-sass 4.x needs Node 12 + Python 2.7), so the built site is committed and
+# deployed as-is. See README.md.
+.wrangler/
 
 # Logs
 logs

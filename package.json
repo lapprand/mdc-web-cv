@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --progress --mode production --inline"
+    "start": "webpack-dev-server --progress --mode production --inline",
+    "dev": "npx wrangler dev",
+    "deploy": "npx wrangler deploy"
   },
   "author": "Arthur Lapprand <lapprand@gmail.com>",
   "repository": {

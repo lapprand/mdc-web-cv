@@ -1,0 +1,7 @@
+name = "mdc-web-cv"
+compatibility_date = "2026-10-03"
+
+# The 2019 build cannot run on a modern toolchain (see README.md), so the built
+# site is committed in ./dist and deployed as-is.
+[assets]
+directory = "./dist"
